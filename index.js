@@ -51,7 +51,7 @@ client.on('ready', () => {
 
     initResources();
     updateSlangs();
-    api.fetchBlizzardTokenFromDb();
+    //api.fetchBlizzardTokenFromDb();
 
     mythicScoresChannel = client.channels.cache.find(channel => channel.name === 'mythic-scores');
     testChannel = client.channels.cache.find(channel => channel.name === 'test');
@@ -101,6 +101,7 @@ client.on('ready', () => {
       let name = data[1];
       let server = data[2];
       database.addProfile({name, server, mythicScores: {all: 1}});
+      msg.channel.send(`Profile ${name} ${server} added`)
       return;
     }
 

@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient
 
 const DB_NAME = 'slackers';
-const url = 'mongodb://localhost:27017/';
+const url = process.env.DB;
 
 module.exports = {
     addProfile: profile => {
