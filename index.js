@@ -143,7 +143,9 @@ client.on('ready', () => {
     }
 
     if(msg.content && msg.content.toLocaleLowerCase().startsWith('addquote')) {
-      let quote = msg.content.split(' ')[1];
+      let parts = msg.content.split(' ')
+      parts.shift();
+      let quote = parts.join(' ');
       return database.addQuote(quote).then(() => {
         updateQuotes();       
         msg.reply(`New quote "${quote}" successfully set. Enjoy =)`);
