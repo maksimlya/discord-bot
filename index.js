@@ -13,6 +13,7 @@ const voiceAgent = new VoicePlayer(client);
 
 const enableBot = true;
 let commonSlang = [];
+let commonQuotes = [];
 
 const refreshMythicScores = async () => {
   
@@ -51,6 +52,7 @@ client.on('ready', () => {
 
     initResources();
     updateSlangs();
+    updateQuotes();
     api.fetchBlizzardTokenFromDb();
 
     mythicScoresChannel = client.channels.cache.find(channel => channel.name === 'mythic-scores');
@@ -140,6 +142,19 @@ client.on('ready', () => {
       return msg.reply(prepareVoicesList());
     }
 
+    if(msg.content && msg.content.toLocaleLowerCase().startsWith('addquote')) {
+      let quote = msg.content.split(' ')[1];
+      return database.addQuote(quote).then(() => {
+        updateQuotes();       
+        msg.reply(`New quote "${quote}" successfully set. Enjoy =)`);
+      });
+    }
+    if(msg.content && msg.content.toLocaleLowerCase().startsWith('listquotes')) {
+      return database.getAllQuotes().then(quotes => {      
+        msg.reply('\n\n' + quotes);
+      });
+    }
+
     if(msg.content.includes('setVoice')) {
       let index = Number(msg.content.split(' ')[1]);
       voiceAgent.setVoice(index);
@@ -166,9 +181,10 @@ client.on('ready', () => {
     
 
     if(msg.content === 'quote'){
-      let replyQuote = constants.commonQuotes[Math.floor(Math.random() * constants.commonQuotes.length)];
+      let replyQuote = commonQuotes[Math.floor(Math.random() * commonQuotes.length)];
       voiceAgent.voiceQuote(replyQuote);
       msg.reply(replyQuote);
+      console.log(commonQuotes);
       return;
     }
   });
@@ -194,4 +210,10 @@ client.on('ready', () => {
       }
       commonSlang = tempSlangs;
     });
+ }
+
+ function updateQuotes() {
+   database.getAllQuotes().then(res => {
+     commonQuotes = res;
+   })
  }

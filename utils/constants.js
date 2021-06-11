@@ -37,7 +37,8 @@ module.exports = {
     },
 
     nameFilter: {
-        'Mëow': 'Meow'
+        'Mëow': 'Meow',
+        'Nemethys': 'Nemesis'
     },
     
     channelNames: {
@@ -98,6 +99,7 @@ module.exports = {
         'Oh shit i need to purchase a flask',
         'Oh shit i have no mana',
         'I put it in but nothing happened',
-        'I need letter man'
+        'I need letter man',
+        'shonto likes cucumbers'
     ]
 }

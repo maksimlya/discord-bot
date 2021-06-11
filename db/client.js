@@ -4,6 +4,40 @@ const DB_NAME = 'slackers';
 const url = 'mongodb://localhost:27017/';
 
 module.exports = {
+    addQuote: quote => {
+        return new Promise((resolve, reject) => {
+            MongoClient.connect(url, function(err, db) {
+                if (err) {
+                    reject(err);
+                }
+                var dbo = db.db(DB_NAME);
+                dbo.collection("quotes").insertOne({value: quote}, function(err, res) {
+                if (err) {
+                    reject(err);
+                }
+                db.close();
+                resolve();
+                });
+            });
+        });
+    },
+    getAllQuotes: () => {
+        return new Promise((resolve, reject) => {
+            MongoClient.connect(url, function(err, db) {
+                if (err) {
+                    reject(err);
+                }
+                var dbo = db.db(DB_NAME);
+                dbo.collection("quotes").find({}).toArray(function(err, res) {
+                if (err) {
+                    reject(err);
+                }
+                db.close();
+                resolve(res.map(a=>a.value));
+                });
+            });
+        });
+    },
     addProfile: profile => {
         return new Promise((resolve, reject) => {
             MongoClient.connect(url, function(err, db) {
