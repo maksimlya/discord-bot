@@ -33,7 +33,8 @@ module.exports = {
 
     profileNames: {
         botName: 'Slackers Quoter',
-        Omee: 'Pine'
+        Omee: 'Pine',
+        'Whitemist (Erik)': 'Erik'
     },
 
     nameFilter: {

@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 require('dotenv').config();
 const constants = require('./utils/constants');
-const { htmlToImage, initResources } = require('./utils/htmlGenerator');
+const { htmlToImage, initResources, htmlToOldSeasonImage } = require('./utils/htmlGenerator');
 const { VoicePlayer } = require('./voice/player');
 
 const database = require('./db/client');
@@ -86,11 +86,20 @@ client.on('ready', () => {
      return voiceAgent.handleMusicCommand(msg.content);
     }
 
-    if(msg.channel.name === 'mythic-scores') {
+    if(msg.channel.name === 'mythic-scores' || msg.channel.name === 'test') {
       if(msg.content.toLocaleLowerCase().replace(/ /g, '') == 'shameboard') {
         return database.getAllProfiles().then(res => {
           res = res.sort((a,b) => a.mythicScores.all < b.mythicScores.all ? 1 : -1);
           htmlToImage(res).then(() => {
+            msg.channel.send({files: ['./image.png']});
+          });
+        });
+      }
+
+      if(msg.content.toLocaleLowerCase() == 'shameboard s1') {
+        return database.getAllProfiles().then(res => {
+          res = res.sort((a,b) => a.mythicScoresS1.all < b.mythicScoresS1.all ? 1 : -1);
+          htmlToOldSeasonImage(res, 1).then(() => {
             msg.channel.send({files: ['./image.png']});
           });
         });

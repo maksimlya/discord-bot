@@ -53,7 +53,7 @@ const fetchRemoteData = async profile => {
     let mythicResponse, result, messageReply;
 
     try {
-      mythicResponse = await fetch(`https://raider.io/api/v1/characters/profile?region=eu&realm=${profile.server}&name=${profile.name}&fields=mythic_plus_scores_by_season:current,mythic_plus_best_runs,covenant`);
+      mythicResponse = await fetch(`https://raider.io/api/v1/characters/profile?region=eu&realm=${profile.server}&name=${profile.name}&fields=mythic_plus_scores_by_season:current,mythic_plus_best_runs,covenant,mythic_plus_recent_runs`);
       
       if(mythicResponse.status != 200) {
         return {};
@@ -65,7 +65,7 @@ const fetchRemoteData = async profile => {
       return {};
     }
     
-    if(!bestRun || result.mythic_plus_best_runs && JSON.stringify(bestRun) !== JSON.stringify(result.mythic_plus_best_runs[0])) {
+    if(!bestRun && result.mythic_plus_best_runs.length || bestRun && JSON.stringify(bestRun) !== JSON.stringify(result.mythic_plus_best_runs[0])) {
       bestRun = result.mythic_plus_best_runs[0];
       profile.bestRun = bestRun;
       needUpdate = true;
@@ -78,7 +78,7 @@ const fetchRemoteData = async profile => {
 
     const newScore = result.mythic_plus_scores_by_season[0].scores.all;
     if(newScore > currentScore) {
-       messageReply = `Congratulations ${constants.nameFilter[profile.name] || profile.name} , your mythic score went up from ${Math.round(currentScore)} to ${Math.round(newScore)}!`
+       messageReply = `Congratulations ${constants.nameFilter[profile.name] || profile.name} for ${!!result.mythic_plus_recent_runs[0].num_keystone_upgrades ? 'timing' : 'depleting'} ${result.mythic_plus_recent_runs[0].dungeon} +${result.mythic_plus_recent_runs[0].mythic_level}, your mythic score went up from ${Math.round(currentScore)} to ${Math.round(newScore)}!`
     }
 
     if(JSON.stringify(result.mythic_plus_scores_by_season[0].scores) != JSON.stringify(profile.mythicScores)) {
