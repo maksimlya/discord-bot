@@ -109,7 +109,7 @@ client.on('ready', () => {
      return voiceAgent.handleMusicCommand(msg.content);
     }
 
-    if(msg.channel.name === constants.channelNames.scores || msg.channel.name === constants.channelNames.test) {
+    if(msg.channel.name === constants.channelNames.scores || msg.channel.name === constants.channelNames.general || msg.channel.name === constants.channelNames.test) {
       if(msg.content.toLocaleLowerCase().replace(/ /g, '') == 'shameboard') {
         return database.getAllProfiles().then(res => {
           res = res.sort((a,b) => a.mythicScores.all < b.mythicScores.all ? 1 : -1);
