@@ -2,7 +2,8 @@ const Queue = require('promise-queue');
 const constants = require('../utils/constants');
 var queue = new Queue(1);
 const say = require('say');
-const ytdl = require('ytdl-core')
+const ytdl = require('ytdl-core');
+const fs = require('fs');
 
 class VoicePlayer {
     constructor(client) {
@@ -11,6 +12,11 @@ class VoicePlayer {
         this.musicBroadcast = client.voice.createBroadcast();
         this.voiceTunnel = null;
         this.voice = constants.botVoices[1].value;
+    }
+
+    subscribeToUser = user => {
+      const audio = this.voiceTunnel.receiver.createStream(user.id, {mode: 'pcm'});
+      fs.appendFile(`recordings/${user.username}.wav`, audio.pipe(), () => {});
     }
 
     voiceQuote = (quote, customVoice) => {

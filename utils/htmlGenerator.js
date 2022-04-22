@@ -25,6 +25,12 @@ const initResources = () => {
   fs.readFile('./resources/Roles/Healer.png', "base64" ,(err, res) => {
     resources["healer"] = 'data:image/png;base64, ' + res;
   });
+  fs.readFile('./resources/Affixes/Fortified.jpg', "base64" ,(err, res) => {
+    resources["Fortified"] = 'data:image/png;base64, ' + res;
+  });
+  fs.readFile('./resources/Affixes/Tyrannical.jpg', "base64" ,(err, res) => {
+    resources["Tyrannical"] = 'data:image/png;base64, ' + res;
+  });
 
   console.log('Resources init done!');
 }
@@ -110,6 +116,7 @@ table.redTable {
 <th>Name</th>
 <th>Score</th>
 <th>Best Run</th>
+<th>Worst Run</th>
 </tr>
 </thead>
 <tfoot>
@@ -125,7 +132,8 @@ ${characters.slice(0,18).map(a=>
 `<tr>
 <td style="color:${classColors[a.class]}">${a.name} <img style="vertical-align: inherit" src='${resources[a.covenant]}' width="40" height="40"/></td>
 <td><img style="vertical-align: inherit" src='${resources[a.role]}' width="40" height="40"/> - ${Math.round(a.mythicScores.all)}</td>
-<td>${a.bestRun && a.bestRun.short_name || ''} +${a.bestRun && a.bestRun.mythic_level || '0'}</td>
+<td><img style="vertical-align: inherit" src='${resources[a.bestRun && a.bestRun.affixes[0].name]}' width="40" height="40"/><span style="color:${a.bestRun && a.bestRun.num_keystone_upgrades ? "#BDE4A8" : "#F44174"};">${a.bestRun && a.bestRun.short_name || ''} +${a.bestRun && a.bestRun.mythic_level || '0'}</span></td>
+<td><img style="vertical-align: inherit" src='${resources[a.worstRun && a.worstRun.affixes[0].name]}' width="40" height="40"/><span style="color:${a.worstRun && a.worstRun.num_keystone_upgrades ? "#BDE4A8" : "#F44174"};">${a.worstRun && a.worstRun.short_name || ''} +${a.worstRun && a.worstRun.mythic_level || '0'}</span></td>
 </tr>`
 ).reduce((a,b) => a + b )}
 </tbody>

@@ -1,7 +1,9 @@
-var MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient
+const constants = require('../utils/constants');
 
 const DB_NAME = 'slackers';
 const url = 'mongodb://localhost:27017/';
+
 
 module.exports = {
     addQuote: quote => {
@@ -78,14 +80,14 @@ module.exports = {
         });
     },
 
-    getProfile: profile => {
+    getProfile: name => {
         return new Promise((resolve, reject) => {
             MongoClient.connect(url, function(err, db) {
                 if (err) {
                     reject(err);
                 }
                 var dbo = db.db(DB_NAME);
-                dbo.collection("profiles").find(profile).toArray(function(err, res) {
+                dbo.collection("profiles").find({name}).toArray(function(err, res) {
                 if (err) {
                     reject(err);
                 }
@@ -94,6 +96,40 @@ module.exports = {
                 });
             });
         })
+    },
+
+    prepareProfileBestRuns: async name => {
+        const profile = await module.exports.getProfile(name);
+        const allBestRuns = profile.allBestRuns.concat(profile.allBestAltRuns);
+
+        let fortifiedScore = 0;
+        let tyrannicalScore = 0;
+        const allRuns = {};
+        for(let dungeon of constants.mythisShortNames) {
+            allRuns[dungeon] = {};
+        }
+        for(let dungeon of allBestRuns) {
+            const affix = dungeon.affixes[0].name;
+            allRuns[dungeon.short_name][affix] = dungeon;
+            if(affix == 'Tyrannical') {
+                tyrannicalScore += dungeon.score;
+            } else {
+                fortifiedScore += dungeon.score;
+            }
+        }
+        tyrannicalScore = tyrannicalScore.toFixed(2);
+        fortifiedScore = fortifiedScore.toFixed(2);
+
+        return { 
+            allRuns, 
+            tyrannicalScore, 
+            fortifiedScore, 
+            score: profile.mythicScores.all, 
+            class: profile.class, 
+            covenant: profile.covenant,
+            name: profile.name,
+            role: profile.role
+        }
     },
 
     getAllProfiles: () => {

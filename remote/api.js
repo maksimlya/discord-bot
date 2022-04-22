@@ -50,10 +50,14 @@ const fetchRemoteData = async profile => {
     let needUpdate = false;
     const currentScore = profile.mythicScores && profile.mythicScores.all;
     let bestRun = profile.bestRun;
+    let worstRun = profile.worstRun;
+    let lastRun = profile.lastRun;
+    let allBestRuns = profile.allBestRuns;
+    let allBestAltRuns = profile.allBestAltRuns;
     let mythicResponse, result, messageReply;
 
     try {
-      mythicResponse = await fetch(`https://raider.io/api/v1/characters/profile?region=eu&realm=${profile.server}&name=${profile.name}&fields=mythic_plus_scores_by_season:current,mythic_plus_best_runs,covenant,mythic_plus_recent_runs`);
+      mythicResponse = await fetch(`https://raider.io/api/v1/characters/profile?region=eu&realm=${profile.server}&name=${profile.name}&fields=mythic_plus_scores_by_season:current,mythic_plus_best_runs,covenant,mythic_plus_recent_runs,mythic_plus_alternate_runs`);
       
       if(mythicResponse.status != 200) {
         return {};
@@ -64,11 +68,31 @@ const fetchRemoteData = async profile => {
       console.error('[refreshMythicScores] failed ', err);
       return {};
     }
-    
-    if(!bestRun && result.mythic_plus_best_runs.length || bestRun && JSON.stringify(bestRun) !== JSON.stringify(result.mythic_plus_best_runs[0])) {
-      bestRun = result.mythic_plus_best_runs[0];
+
+    let bestRuns = (result.mythic_plus_best_runs || []).concat(result.mythic_plus_alternate_runs || []);
+    bestRuns = bestRuns.sort((a,b) => a.score < b.score ? 1 : -1);
+    if(!bestRun && bestRuns.length || bestRun && JSON.stringify(bestRun) !== JSON.stringify(bestRuns[0]) ||
+    !worstRun && bestRuns.length || worstRun && JSON.stringify(worstRun) !== JSON.stringify(bestRuns[bestRuns.length-1])) {
+      bestRun = bestRuns[0];
+      worstRun = bestRuns[bestRuns.length - 1];
       profile.bestRun = bestRun;
+      profile.worstRun = worstRun;
       needUpdate = true;
+    }
+
+    if(!allBestRuns || JSON.stringify(allBestRuns) != JSON.stringify(result.mythic_plus_best_runs)) {
+      profile.allBestRuns = result.mythic_plus_best_runs;
+      needUpdate = true;
+    }
+    if(!allBestAltRuns || JSON.stringify(allBestAltRuns) != JSON.stringify(result.mythic_plus_alternate_runs)) {
+      profile.allBestAltRuns = result.mythic_plus_alternate_runs;
+      needUpdate = true;
+    }
+
+    if(!lastRun && result.mythic_plus_recent_runs.length || lastRun && JSON.stringify(lastRun) !== JSON.stringify(result.mythic_plus_recent_runs[0])) {
+        lastRun = result.mythic_plus_recent_runs[0];
+        profile.lastRun = lastRun;
+        needUpdate = true;
     }
 
     if(!profile.mythicScores) {
@@ -78,7 +102,17 @@ const fetchRemoteData = async profile => {
 
     const newScore = result.mythic_plus_scores_by_season[0].scores.all;
     if(newScore > currentScore) {
+      console.error('Last Score: ' + currentScore);
+      console.error('New Score: ' + newScore);
        messageReply = `Congratulations ${constants.nameFilter[profile.name] || profile.name} for ${!!result.mythic_plus_recent_runs[0].num_keystone_upgrades ? 'timing' : 'depleting'} ${result.mythic_plus_recent_runs[0].dungeon} +${result.mythic_plus_recent_runs[0].mythic_level}, your mythic score went up from ${Math.round(currentScore)} to ${Math.round(newScore)}!`
+    } else if(lastRun && !lastRun.num_keystone_upgrades && needUpdate) {
+        messageReply = constants.keyFailureQuotes({
+            name: constants.nameFilter[profile.name] || profile.name,
+            key: lastRun.dungeon,
+            keyCode: lastRun.short_name,
+            level: lastRun.mythic_level,
+            time: lastRun.clear_time_ms
+        });
     }
 
     if(JSON.stringify(result.mythic_plus_scores_by_season[0].scores) != JSON.stringify(profile.mythicScores)) {
@@ -138,6 +172,7 @@ const fetchRemoteData = async profile => {
     // }
     return {};
 }
+
 
 const fetchPvpProfile = async profile => {
     await ensureConnection();
