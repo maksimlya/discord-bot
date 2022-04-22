@@ -16,6 +16,15 @@ const enableBot = true;
 let commonSlang = [];
 let commonQuotes = [];
 
+const wipeMythicScores = async () => {
+
+  const profiles = await database.getAllProfiles();
+  for(let profile of profiles) {
+    const { updatedProfile } = await api.wipeSeasonData(profile);
+    await database.updateProfile(updatedProfile);
+  }
+}
+
 const refreshMythicScores = async () => {
   
   const profiles = await database.getAllProfiles();

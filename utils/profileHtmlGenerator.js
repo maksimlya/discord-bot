@@ -52,7 +52,27 @@ const profileHtmlToImage = char => {
     });
   }
 
+const sortRuns = char => {
+  const dungToScore = {}
+  for(let dung of Object.values(char.allRuns)) {
+    if(dung.Fortified) {
+      dungToScore[dung.Fortified.short_name] = {dung: dung.Fortified.short_name, score: Number((Math.round(dung.Fortified.score * 100) / 100).toFixed(2))};
+    }
+    if(dung.Tyrannical) {
+      if(!dungToScore[dung.Tyrannical.short_name]) {
+        dungToScore[dung.Tyrannical.short_name] = {dung: dung.Tyrannical.short_name, score: 0};
+      }
+      dungToScore[dung.Tyrannical.short_name].score += dung.Tyrannical.score;
+      dungToScore[dung.Tyrannical.short_name].score = Number((Math.round(dungToScore[dung.Tyrannical.short_name].score* 100) / 100).toFixed(2));
+    }
+  }
+
+  let res = Object.values(dungToScore).sort((a,b) => a.score < b.score ? 1 : -1);
+  return res.map(a => a.dung);
+}
+
 const generateProfileHtml = char => {
+const sortedRuns = sortRuns(char);
 const html = `<html><head>
 <style>
 body {
@@ -108,7 +128,7 @@ table.minimalistBlack {
 
 <tr>
 <th>Dung/Aff</th>
-${constants.mythisShortNames.map(dung => {
+${sortedRuns.map(dung => {
     return `<th>${dung}</th>`
 }).reduce((a,b) => a + b )}
 <th>Total</th>
@@ -117,7 +137,7 @@ ${constants.mythisShortNames.map(dung => {
 <tfoot>
 <tr>
 <td><img style="vertical-align: inherit" src='${resources['Fortified']}' width="40" height="40"/></td>
-${constants.mythisShortNames.map(dung => 
+${sortedRuns.map(dung => 
     `
     <td>
     <table style="width: 100%; font-weight: bold;"><tr>

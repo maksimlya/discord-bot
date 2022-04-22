@@ -46,6 +46,27 @@ const fetchBlizzardToken = () => {
     });
 }
 
+const wipeSeasonData = async profile => {
+  profile.score = 0;
+  profile.bestRun = {};
+  profile.worstRun ={};
+  profile.lastRun = {};
+  profile.allBestRuns = [];
+  profile.allBestAltRuns =[];
+  profile.mythicScores = {
+    all: 0,
+    dps: 0,
+    healer: 0,
+    tank: 0,
+    spec_0: 0,
+    spec_1: 0,
+    spec_2: 0,
+    spec_3: 0
+  };
+
+  return {updatedProfile: profile}
+}
+
 const fetchRemoteData = async profile => {
     let needUpdate = false;
     const currentScore = profile.mythicScores && profile.mythicScores.all;
@@ -195,4 +216,4 @@ const fetchPvpProfile = async profile => {
         });
 }
 
-module.exports = { fetchBlizzardTokenFromDb, fetchPvpProfile, fetchRemoteData };
+module.exports = { fetchBlizzardTokenFromDb, fetchPvpProfile, fetchRemoteData, wipeSeasonData };
