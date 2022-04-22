@@ -156,7 +156,7 @@ ${sortedRuns.map(dung =>
 </tr>
 <tr>
 <td><img style="vertical-align: inherit" src='${resources['Tyrannical']}' width="40" height="40"/></td>
-${constants.mythisShortNames.map(dung => 
+${sortedRuns.map(dung => 
     `
     <td>
     <table style="width: 100%; font-weight: bold;"><tr>
@@ -175,7 +175,7 @@ ${constants.mythisShortNames.map(dung =>
 </tr>
 <tr>
 <td>Both</td>
-${constants.mythisShortNames.map(dung => 
+${sortedRuns.map(dung => 
     `
     <td>
     <table style="width: 100%; font-weight: bold;"><tr>
@@ -196,7 +196,7 @@ ${constants.mythisShortNames.map(dung =>
 <tbody>
 <tr>
 <td><img style="vertical-align: inherit" src='${resources[char.covenant]}' width="100" height="100"/></td>
-${constants.mythisShortNames.map(dung => {
+${sortedRuns.map(dung => {
     return `<td><img style="vertical-align: inherit" src='${resources[dung]}' width="170" height="100"/></td>`
 }).reduce((a,b) => a + b )}
 <td><img style="vertical-align: inherit" src='${resources[char.role]}' width="100" height="100"/></td>
