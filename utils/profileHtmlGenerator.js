@@ -46,7 +46,7 @@ const profileHtmlToImage = char => {
       html: generateProfileHtml(char),
       puppeteerArgs: {
         defaultViewport: {
-            width: 2000,
+            width: 2010,
             height: 345
       }}
     });
@@ -177,7 +177,7 @@ ${constants.mythisShortNames.map(dung =>
 <tr>
 <td><img style="vertical-align: inherit" src='${resources[char.covenant]}' width="100" height="100"/></td>
 ${constants.mythisShortNames.map(dung => {
-    return `<td><img style="vertical-align: inherit" src='${resources[dung]}' width="181" height="100"/></td>`
+    return `<td><img style="vertical-align: inherit" src='${resources[dung]}' width="170" height="100"/></td>`
 }).reduce((a,b) => a + b )}
 <td><img style="vertical-align: inherit" src='${resources[char.role]}' width="100" height="100"/></td>
 </tr>
