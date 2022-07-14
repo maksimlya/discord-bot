@@ -67,13 +67,13 @@ module.exports = {
                 var dbo = db.db(DB_NAME);
                 var myquery = { name: profile.name, server: profile.server };
                 var newvalues = { $set: {...profile}};
-          
+                
                 dbo.collection("profiles").updateOne(myquery, newvalues, function(err, res) {
                 if (err) {
                     reject(err);
                 }
                 db.close();
-                console.log("1 document updated" + profile);
+                console.log("1 document updated");
                 resolve();
                 });
             });

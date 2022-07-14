@@ -68,7 +68,8 @@ const wipeSeasonData = async profile => {
 }
 
 const fetchRemoteData = async profile => {
-    let needUpdate = false;
+    let needUpdateDb = false;
+    let needAnnounce = false;
     const currentScore = profile.mythicScores && profile.mythicScores.all;
     let bestRun = profile.bestRun;
     let worstRun = profile.worstRun;
@@ -78,7 +79,7 @@ const fetchRemoteData = async profile => {
     let mythicResponse, result, messageReply;
 
     try {
-      mythicResponse = await fetch(`https://raider.io/api/v1/characters/profile?region=eu&realm=${profile.server}&name=${profile.name}&fields=mythic_plus_scores_by_season:current,mythic_plus_best_runs,covenant,mythic_plus_recent_runs,mythic_plus_alternate_runs`);
+      mythicResponse = await fetch(`https://raider.io/api/v1/characters/profile?region=eu&realm=${profile.server}&name=${encodeURI(profile.name)}&fields=mythic_plus_scores_by_season:current,mythic_plus_best_runs,covenant,mythic_plus_recent_runs,mythic_plus_alternate_runs`);
       
       if(mythicResponse.status != 200) {
         return {};
@@ -98,27 +99,42 @@ const fetchRemoteData = async profile => {
       worstRun = bestRuns[bestRuns.length - 1];
       profile.bestRun = bestRun;
       profile.worstRun = worstRun;
-      needUpdate = true;
+      needUpdateDb = true;
+      needAnnounce = true;
+      console.log('debug 1');
     }
 
     if(!allBestRuns || JSON.stringify(allBestRuns) != JSON.stringify(result.mythic_plus_best_runs)) {
       profile.allBestRuns = result.mythic_plus_best_runs;
-      needUpdate = true;
+      needUpdateDb = true;
+      console.log('debug 2');
     }
     if(!allBestAltRuns || JSON.stringify(allBestAltRuns) != JSON.stringify(result.mythic_plus_alternate_runs)) {
       profile.allBestAltRuns = result.mythic_plus_alternate_runs;
-      needUpdate = true;
+      needUpdateDb = true;
+      console.log('debug 3');
     }
 
-    if(!lastRun && result.mythic_plus_recent_runs.length || lastRun && JSON.stringify(lastRun) !== JSON.stringify(result.mythic_plus_recent_runs[0])) {
+    try{
+
+    
+    if(!lastRun && result.mythic_plus_recent_runs.length || (lastRun && JSON.stringify(lastRun) !== JSON.stringify(result.mythic_plus_recent_runs[0]) && result.mythic_plus_recent_runs[0] && lastRun.completed_at < result.mythic_plus_recent_runs[0].completed_at)) {
+        console.log('new last run')
         lastRun = result.mythic_plus_recent_runs[0];
         profile.lastRun = lastRun;
-        needUpdate = true;
+        needUpdateDb = true;
+        needAnnounce = true;
+        console.log('debug 4');
     }
+  } catch(e){
+    console.log(e);
+  }
 
     if(!profile.mythicScores) {
       profile.mythicScores =  result.mythic_plus_scores_by_season[0].scores;
-      needUpdate = true;
+      needUpdateDb = true;
+      needAnnounce = true;
+      console.log('debug 5');
     }
 
     const newScore = result.mythic_plus_scores_by_season[0].scores.all;
@@ -126,7 +142,7 @@ const fetchRemoteData = async profile => {
       console.error('Last Score: ' + currentScore);
       console.error('New Score: ' + newScore);
        messageReply = `Congratulations ${constants.nameFilter[profile.name] || profile.name} for ${!!result.mythic_plus_recent_runs[0].num_keystone_upgrades ? 'timing' : 'depleting'} ${result.mythic_plus_recent_runs[0].dungeon} +${result.mythic_plus_recent_runs[0].mythic_level}, your mythic score went up from ${Math.round(currentScore)} to ${Math.round(newScore)}!`
-    } else if(lastRun && !lastRun.num_keystone_upgrades && needUpdate) {
+    } else if(lastRun && !lastRun.num_keystone_upgrades && needAnnounce) {
         messageReply = constants.keyFailureQuotes({
             name: constants.nameFilter[profile.name] || profile.name,
             key: lastRun.dungeon,
@@ -136,9 +152,11 @@ const fetchRemoteData = async profile => {
         });
     }
 
-    if(JSON.stringify(result.mythic_plus_scores_by_season[0].scores) != JSON.stringify(profile.mythicScores)) {
+    if(JSON.stringify(result.mythic_plus_scores_by_season[0].scores) != JSON.stringify(profile.mythicScores) && profile.mythicScores.all < result.mythic_plus_scores_by_season[0].scores.all) {
       profile.mythicScores = result.mythic_plus_scores_by_season[0].scores;
-      needUpdate = true;
+      console.log('debug 6');
+      needAnnounce = true;
+      needUpdateDb = true;
       let roles = ['tank', 'dps', 'healer'];
       for(let role of roles) {
         if(profile.mythicScores[role] == profile.mythicScores.all) {
@@ -149,16 +167,18 @@ const fetchRemoteData = async profile => {
 
     if(!profile.class) {
       profile.class = result.class;
-      needUpdate = true;
+      needUpdateDb = true;
+      console.log('debug 7');
     }
 
     // Check if covenant changed..
     if(!profile.covenant || profile.covenant != result.covenant.name) {
       profile.covenant = result.covenant.name;
-      needUpdate = true;
+      needUpdateDb = true;
+      console.log('debug 8');
     }
 
-    if(needUpdate) {
+    if(needUpdateDb) {
         return {updatedProfile: profile, messageReply};
     }
 

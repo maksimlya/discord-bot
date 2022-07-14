@@ -32,13 +32,18 @@ const initResources = () => {
     resources["Tyrannical"] = 'data:image/png;base64, ' + res;
   });
 
-  console.log('Resources init done!');
+  console.log('resources init done!');
 }
 
 const htmlToImage = characters => {
     return nodeHtmlToImage({
       output: './image.png',
-      html: generateHtml(characters)
+      html: generateHtml(characters),
+      puppeteerArgs: {
+        defaultViewport: {
+            width: 900,
+            height: 0
+      }}
     });
   }
 
@@ -53,7 +58,7 @@ const generateHtml = characters => {
 const html = `<html><head>
 <style>
 body {
-    height: ${100 + 48.4 * characters.slice(0,18).length}px
+    height: ${87 + 48.4 * characters.slice(0,18).length}px
 }
 table.redTable {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;

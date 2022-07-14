@@ -6,12 +6,13 @@ const ytdl = require('ytdl-core');
 const fs = require('fs');
 
 class VoicePlayer {
-    constructor(client) {
+    constructor(client, enabled) {
         this.client = client;
         this.voiceBroadcast = client.voice.createBroadcast();
         this.musicBroadcast = client.voice.createBroadcast();
         this.voiceTunnel = null;
         this.voice = constants.botVoices[1].value;
+        this.enabled = enabled;
     }
 
     subscribeToUser = user => {
@@ -20,6 +21,9 @@ class VoicePlayer {
     }
 
     voiceQuote = (quote, customVoice) => {
+      if(!this.enabled) {
+        return;
+      }
         queue.add(() => new Promise((resolve, reject) => {
       
           say.export(quote, customVoice || this.voice, 1, 'voice.wav', err => {

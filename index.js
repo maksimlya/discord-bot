@@ -9,21 +9,26 @@ const database = require('./db/client');
 const api = require('./remote/api');  // Communication with Raider.io / Blizzard API
 let mythicScoresChannel;
 
+// Enable or disable bot joining to room and talking.
+const botVoice = false;
 const client = new Discord.Client();
-const voiceAgent = new VoicePlayer(client);
+const voiceAgent = new VoicePlayer(client, botVoice);
 
 const enableBot = true;
+
 let commonSlang = [];
 let commonQuotes = [];
 
-const wipeMythicScores = async () => {
 
-  const profiles = await database.getAllProfiles();
-  for(let profile of profiles) {
-    const { updatedProfile } = await api.wipeSeasonData(profile);
-    await database.updateProfile(updatedProfile);
-  }
-}
+// For seasonal data reset..
+// const wipeMythicScores = async () => {
+
+//   const profiles = await database.getAllProfiles();
+//   for(let profile of profiles) {
+//     const { updatedProfile } = await api.wipeSeasonData(profile);
+//     await database.updateProfile(updatedProfile);
+//   }
+// }
 
 const refreshMythicScores = async () => {
   
@@ -33,9 +38,8 @@ const refreshMythicScores = async () => {
     const { updatedProfile, messageReply } = await api.fetchRemoteData(profile);
     
     if(updatedProfile) {
-    // Save updated to db...
-    database.updateProfile(updatedProfile).then(() => {
-
+      // Save updated to db...
+      await database.updateProfile(updatedProfile);
       // Some profile updates can be silent (like covenant changes).
       if(messageReply) {
         mythicScoresChannel.send(messageReply);
@@ -46,7 +50,6 @@ const refreshMythicScores = async () => {
           });
         });
       }
-    });
     }
   }
  }
@@ -82,10 +85,11 @@ client.on('ready', () => {
     const slackersRoom = client.channels.cache.find(channel => channel.name === constants.channelNames.casualSlackersDungeonGroup);
     const generalRoom = client.channels.cache.find(channel => channel.name === constants.channelNames.general);
 
-    slackersRoom.join().then(connection => {
-      voiceAgent.setVoiceTunnel(connection);
-    })
-         
+    if(botVoice){
+      slackersRoom.join().then(connection => {
+        voiceAgent.setVoiceTunnel(connection);
+      })
+    }    
   });
 
   if(enableBot) {

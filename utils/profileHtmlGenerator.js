@@ -37,7 +37,7 @@ const initProfileResources = () => {
       resources[name] = 'data:image/png;base64, ' + res;
     });
   });
-  console.log('Resources init done!');
+  console.log('Profile resources init done!');
 }
 
 const profileHtmlToImage = char => {

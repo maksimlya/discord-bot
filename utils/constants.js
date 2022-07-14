@@ -104,9 +104,9 @@ module.exports = {
         const index = Math.floor(Math.random() * 3);
 
         const quotes = [
-            `${name} just depleted it's ${key} +${level} key by ${Math.floor((time - this.mythicTimers[keyCode])/1000/60)} minutes and ${Math.floor(((time - this.mythicTimers[keyCode])/1000/60 % 1) * 100)} seconds and got no score for it. What a slacker.`,
-            `Useless piece of ${name} fell asleep and depleted it's ${key} +${level} key by ${Math.floor((time - this.mythicTimers[keyCode])/1000/60)} minutes and ${Math.floor(((time - this.mythicTimers[keyCode])/1000/60 % 1) * 100)} seconds and got no score for it.`,
-            `${name} got distracted by Method Josh and depleted it's ${key} +${level} key by ${Math.floor((time - this.mythicTimers[keyCode])/1000/60)} minutes and ${Math.floor(((time - this.mythicTimers[keyCode])/1000/60 % 1) * 100)} seconds and got no score for it, perhaps it is happy now`,
+            `${name} just depleted it's ${key} +${level} key by ${Math.floor((time - this.mythicTimers[keyCode])/1000/60)} minutes and ${Math.floor(((time - this.mythicTimers[keyCode])/1000/60 % 1) * 60)} seconds and got no score for it. What a slacker.`,
+            `Useless piece of ${name} fell asleep and depleted it's ${key} +${level} key by ${Math.floor((time - this.mythicTimers[keyCode])/1000/60)} minutes and ${Math.floor(((time - this.mythicTimers[keyCode])/1000/60 % 1) * 60)} seconds and got no score for it.`,
+            `${name} got distracted by Method Josh and depleted it's ${key} +${level} key by ${Math.floor((time - this.mythicTimers[keyCode])/1000/60)} minutes and ${Math.floor(((time - this.mythicTimers[keyCode])/1000/60 % 1) * 60)} seconds and got no score for it, perhaps it is happy now`,
         ]
 
         return quotes[index];
