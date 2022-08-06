@@ -78,7 +78,7 @@ client.on('ready', () => {
     initProfileResources();
     updateSlangs();
     updateQuotes();
-    api.fetchBlizzardTokenFromDb();
+    // api.fetchBlizzardTokenFromDb();
 
     mythicScoresChannel = client.channels.cache.find(channel => channel.name === constants.channelNames.scores);
     testChannel = client.channels.cache.find(channel => channel.name === 'test');

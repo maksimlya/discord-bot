@@ -32,16 +32,22 @@ module.exports = {
     },
 
     mythisShortNames: [
-        'SOA',
-        'PF',
-        'HOA',
-        'NW',
-        'SD',
-        'TOP',
-        'DOS',
-        'MISTS',
+        // 'SOA',
+        // 'PF',
+        // 'HOA',
+        // 'NW',
+        // 'SD',
+        // 'TOP',
+        // 'DOS',
+        // 'MISTS',
         'STRT',
-        'GMBT'
+        'GMBT',
+        'GD',
+        'ID',
+        'YARD',
+        'WORK',
+        'LOWR',
+        'UPPR'
     ],
 
     mythicTimers: {
@@ -74,7 +80,25 @@ module.exports = {
         'SOA3': 1404000,
         'TOP': 2220000,
         'TOP2': 1776000,
-        'TOP3': 1332000
+        'TOP3': 1332000,
+        'GD': 1800000,
+        'GD2': 1440000,
+        'GD3': 1080000,
+        'ID': 1920000,
+        'ID2': 1524000,
+        'ID3': 1152000,
+        'YARD': 2280000,
+        'YARD2': 1824000,
+        'YARD3': 1368000,
+        'WORK': 1920000,
+        'WORK2': 1524000,
+        'WORK3': 1152000,
+        'LOWR': 2340000,
+        'LOWR2': 1872000,
+        'LOWR3': 1404000,
+        'UPPR': 2100000,
+        'UPPR2': 1680000,
+        'UPPR3': 1260000
     },
 
     profileNames: {
@@ -170,2106 +194,1101 @@ module.exports = {
 
     rioScoreColors: [
       {
-        "score": 3675,
-        "rgbHex": "#ff8000",
-        "rgbDecimal": 16744448,
-        "rgbFloat": [
-          1,
-          0.5,
-          0
-        ],
-        "rgbInteger": [
-          255,
-          128,
-          0
-        ]
-      },
-      {
-        "score": 3610,
-        "rgbHex": "#fe7e14",
-        "rgbDecimal": 16678420,
-        "rgbFloat": [
-          1,
-          0.49,
-          0.08
-        ],
-        "rgbInteger": [
-          254,
-          126,
-          20
-        ]
-      },
-      {
-        "score": 3585,
-        "rgbHex": "#fd7c20",
-        "rgbDecimal": 16612384,
-        "rgbFloat": [
-          0.99,
-          0.49,
-          0.13
-        ],
-        "rgbInteger": [
-          253,
-          124,
-          32
-        ]
-      },
-      {
-        "score": 3560,
-        "rgbHex": "#fc7a29",
-        "rgbDecimal": 16546345,
-        "rgbFloat": [
-          0.99,
-          0.48,
-          0.16
-        ],
-        "rgbInteger": [
-          252,
-          122,
-          41
-        ]
-      },
-      {
-        "score": 3535,
-        "rgbHex": "#fb7831",
-        "rgbDecimal": 16480305,
-        "rgbFloat": [
-          0.98,
-          0.47,
-          0.19
-        ],
-        "rgbInteger": [
-          251,
-          120,
-          49
-        ]
-      },
-      {
-        "score": 3515,
-        "rgbHex": "#fa7738",
-        "rgbDecimal": 16414520,
-        "rgbFloat": [
-          0.98,
-          0.47,
-          0.22
-        ],
-        "rgbInteger": [
-          250,
-          119,
-          56
-        ]
-      },
-      {
-        "score": 3490,
-        "rgbHex": "#f9753e",
-        "rgbDecimal": 16348478,
-        "rgbFloat": [
-          0.98,
-          0.46,
-          0.24
-        ],
-        "rgbInteger": [
-          249,
-          117,
-          62
-        ]
-      },
-      {
-        "score": 3465,
-        "rgbHex": "#f77345",
-        "rgbDecimal": 16216901,
-        "rgbFloat": [
-          0.97,
-          0.45,
-          0.27
-        ],
-        "rgbInteger": [
-          247,
-          115,
-          69
-        ]
-      },
-      {
-        "score": 3440,
-        "rgbHex": "#f6714a",
-        "rgbDecimal": 16150858,
-        "rgbFloat": [
-          0.96,
-          0.44,
-          0.29
-        ],
-        "rgbInteger": [
-          246,
-          113,
-          74
-        ]
-      },
-      {
-        "score": 3415,
-        "rgbHex": "#f56f50",
-        "rgbDecimal": 16084816,
-        "rgbFloat": [
-          0.96,
-          0.44,
-          0.31
-        ],
-        "rgbInteger": [
-          245,
-          111,
-          80
-        ]
-      },
-      {
-        "score": 3395,
-        "rgbHex": "#f46d56",
-        "rgbDecimal": 16018774,
-        "rgbFloat": [
-          0.96,
-          0.43,
-          0.34
-        ],
-        "rgbInteger": [
-          244,
-          109,
-          86
-        ]
-      },
-      {
-        "score": 3370,
-        "rgbHex": "#f26b5b",
-        "rgbDecimal": 15887195,
-        "rgbFloat": [
-          0.95,
-          0.42,
-          0.36
-        ],
-        "rgbInteger": [
-          242,
-          107,
-          91
-        ]
-      },
-      {
-        "score": 3345,
-        "rgbHex": "#f16960",
-        "rgbDecimal": 15821152,
-        "rgbFloat": [
-          0.95,
-          0.41,
-          0.38
-        ],
-        "rgbInteger": [
-          241,
-          105,
-          96
-        ]
-      },
-      {
-        "score": 3320,
-        "rgbHex": "#ef6765",
-        "rgbDecimal": 15689573,
-        "rgbFloat": [
-          0.94,
-          0.4,
-          0.4
-        ],
-        "rgbInteger": [
-          239,
-          103,
-          101
-        ]
-      },
-      {
-        "score": 3295,
-        "rgbHex": "#ee656a",
-        "rgbDecimal": 15623530,
-        "rgbFloat": [
-          0.93,
-          0.4,
-          0.42
-        ],
-        "rgbInteger": [
-          238,
-          101,
-          106
-        ]
-      },
-      {
-        "score": 3275,
-        "rgbHex": "#ec6370",
-        "rgbDecimal": 15491952,
-        "rgbFloat": [
-          0.93,
-          0.39,
-          0.44
-        ],
-        "rgbInteger": [
-          236,
-          99,
-          112
-        ]
-      },
-      {
-        "score": 3250,
-        "rgbHex": "#eb6275",
-        "rgbDecimal": 15426165,
-        "rgbFloat": [
-          0.92,
-          0.38,
-          0.46
-        ],
-        "rgbInteger": [
-          235,
-          98,
-          117
-        ]
-      },
-      {
-        "score": 3225,
-        "rgbHex": "#e96079",
-        "rgbDecimal": 15294585,
-        "rgbFloat": [
-          0.91,
-          0.38,
-          0.47
-        ],
-        "rgbInteger": [
-          233,
-          96,
-          121
-        ]
-      },
-      {
-        "score": 3200,
-        "rgbHex": "#e75e7e",
-        "rgbDecimal": 15163006,
-        "rgbFloat": [
-          0.91,
-          0.37,
-          0.49
-        ],
-        "rgbInteger": [
-          231,
-          94,
-          126
-        ]
-      },
-      {
-        "score": 3175,
-        "rgbHex": "#e55c83",
-        "rgbDecimal": 15031427,
-        "rgbFloat": [
-          0.9,
-          0.36,
-          0.51
-        ],
-        "rgbInteger": [
-          229,
-          92,
-          131
-        ]
-      },
-      {
-        "score": 3155,
-        "rgbHex": "#e45a88",
-        "rgbDecimal": 14965384,
-        "rgbFloat": [
-          0.89,
-          0.35,
-          0.53
-        ],
-        "rgbInteger": [
-          228,
-          90,
-          136
-        ]
-      },
-      {
-        "score": 3130,
-        "rgbHex": "#e2588d",
-        "rgbDecimal": 14833805,
-        "rgbFloat": [
-          0.89,
-          0.35,
-          0.55
-        ],
-        "rgbInteger": [
-          226,
-          88,
-          141
-        ]
-      },
-      {
-        "score": 3105,
-        "rgbHex": "#e05692",
-        "rgbDecimal": 14702226,
-        "rgbFloat": [
-          0.88,
-          0.34,
-          0.57
-        ],
-        "rgbInteger": [
-          224,
-          86,
-          146
-        ]
-      },
-      {
-        "score": 3080,
-        "rgbHex": "#de5497",
-        "rgbDecimal": 14570647,
-        "rgbFloat": [
-          0.87,
-          0.33,
-          0.59
-        ],
-        "rgbInteger": [
-          222,
-          84,
-          151
-        ]
-      },
-      {
-        "score": 3055,
-        "rgbHex": "#db529b",
-        "rgbDecimal": 14373531,
-        "rgbFloat": [
-          0.86,
-          0.32,
-          0.61
-        ],
-        "rgbInteger": [
-          219,
-          82,
-          155
-        ]
-      },
-      {
-        "score": 3035,
-        "rgbHex": "#d951a0",
-        "rgbDecimal": 14242208,
-        "rgbFloat": [
-          0.85,
-          0.32,
-          0.63
-        ],
-        "rgbInteger": [
-          217,
-          81,
-          160
-        ]
-      },
-      {
-        "score": 3010,
-        "rgbHex": "#d74fa5",
-        "rgbDecimal": 14110629,
-        "rgbFloat": [
-          0.84,
-          0.31,
-          0.65
-        ],
-        "rgbInteger": [
-          215,
-          79,
-          165
-        ]
-      },
-      {
-        "score": 2985,
-        "rgbHex": "#d44daa",
-        "rgbDecimal": 13913514,
-        "rgbFloat": [
-          0.83,
-          0.3,
-          0.67
-        ],
-        "rgbInteger": [
-          212,
-          77,
-          170
-        ]
-      },
-      {
-        "score": 2960,
-        "rgbHex": "#d24baf",
-        "rgbDecimal": 13781935,
-        "rgbFloat": [
-          0.82,
-          0.29,
-          0.69
-        ],
-        "rgbInteger": [
-          210,
-          75,
-          175
-        ]
-      },
-      {
-        "score": 2935,
-        "rgbHex": "#cf49b4",
-        "rgbDecimal": 13584820,
-        "rgbFloat": [
-          0.81,
-          0.29,
-          0.71
-        ],
-        "rgbInteger": [
-          207,
-          73,
-          180
-        ]
-      },
-      {
-        "score": 2915,
-        "rgbHex": "#cc47b8",
-        "rgbDecimal": 13387704,
-        "rgbFloat": [
-          0.8,
-          0.28,
-          0.72
-        ],
-        "rgbInteger": [
-          204,
-          71,
-          184
-        ]
-      },
-      {
-        "score": 2890,
-        "rgbHex": "#c946bd",
-        "rgbDecimal": 13190845,
-        "rgbFloat": [
-          0.79,
-          0.27,
-          0.74
-        ],
-        "rgbInteger": [
-          201,
-          70,
-          189
-        ]
-      },
-      {
-        "score": 2865,
-        "rgbHex": "#c644c2",
-        "rgbDecimal": 12993730,
-        "rgbFloat": [
-          0.78,
-          0.27,
-          0.76
-        ],
-        "rgbInteger": [
-          198,
-          68,
-          194
-        ]
-      },
-      {
-        "score": 2840,
-        "rgbHex": "#c342c7",
-        "rgbDecimal": 12796615,
-        "rgbFloat": [
-          0.76,
-          0.26,
-          0.78
-        ],
-        "rgbInteger": [
-          195,
-          66,
-          199
-        ]
-      },
-      {
-        "score": 2815,
-        "rgbHex": "#c040cc",
-        "rgbDecimal": 12599500,
-        "rgbFloat": [
-          0.75,
-          0.25,
-          0.8
-        ],
-        "rgbInteger": [
-          192,
-          64,
-          204
-        ]
-      },
-      {
-        "score": 2795,
-        "rgbHex": "#bc3fd1",
-        "rgbDecimal": 12337105,
-        "rgbFloat": [
-          0.74,
-          0.25,
-          0.82
-        ],
-        "rgbInteger": [
-          188,
-          63,
-          209
-        ]
-      },
-      {
-        "score": 2770,
-        "rgbHex": "#b93dd6",
-        "rgbDecimal": 12139990,
-        "rgbFloat": [
-          0.73,
-          0.24,
-          0.84
-        ],
-        "rgbInteger": [
-          185,
-          61,
-          214
-        ]
-      },
-      {
-        "score": 2745,
-        "rgbHex": "#b53bda",
-        "rgbDecimal": 11877338,
-        "rgbFloat": [
-          0.71,
-          0.23,
-          0.85
-        ],
-        "rgbInteger": [
-          181,
-          59,
-          218
-        ]
-      },
-      {
-        "score": 2720,
-        "rgbHex": "#b13adf",
-        "rgbDecimal": 11614943,
-        "rgbFloat": [
-          0.69,
-          0.23,
-          0.87
-        ],
-        "rgbInteger": [
-          177,
-          58,
-          223
-        ]
-      },
-      {
-        "score": 2695,
-        "rgbHex": "#ac38e4",
-        "rgbDecimal": 11286756,
-        "rgbFloat": [
-          0.67,
-          0.22,
-          0.89
-        ],
-        "rgbInteger": [
-          172,
-          56,
-          228
-        ]
-      },
-      {
-        "score": 2675,
-        "rgbHex": "#a836e9",
-        "rgbDecimal": 11024105,
-        "rgbFloat": [
-          0.66,
-          0.21,
-          0.91
-        ],
-        "rgbInteger": [
-          168,
-          54,
-          233
-        ]
-      },
-      {
-        "score": 2650,
-        "rgbHex": "#a335ee",
-        "rgbDecimal": 10696174,
-        "rgbFloat": [
-          0.64,
-          0.21,
-          0.93
-        ],
-        "rgbInteger": [
-          163,
-          53,
-          238
-        ]
-      },
-      {
-        "score": 2605,
-        "rgbHex": "#9f3aed",
-        "rgbDecimal": 10435309,
-        "rgbFloat": [
-          0.62,
-          0.23,
-          0.93
-        ],
-        "rgbInteger": [
-          159,
-          58,
-          237
-        ]
-      },
-      {
-        "score": 2580,
-        "rgbHex": "#9b3eec",
-        "rgbDecimal": 10174188,
-        "rgbFloat": [
-          0.61,
-          0.24,
-          0.93
-        ],
-        "rgbInteger": [
-          155,
-          62,
-          236
-        ]
-      },
-      {
-        "score": 2555,
-        "rgbHex": "#9743ec",
-        "rgbDecimal": 9913324,
-        "rgbFloat": [
-          0.59,
-          0.26,
-          0.93
-        ],
-        "rgbInteger": [
-          151,
-          67,
-          236
-        ]
-      },
-      {
-        "score": 2530,
-        "rgbHex": "#9246eb",
-        "rgbDecimal": 9586411,
-        "rgbFloat": [
-          0.57,
-          0.27,
-          0.92
-        ],
-        "rgbInteger": [
-          146,
-          70,
-          235
-        ]
-      },
-      {
-        "score": 2505,
-        "rgbHex": "#8e4aea",
-        "rgbDecimal": 9325290,
-        "rgbFloat": [
-          0.56,
-          0.29,
-          0.92
-        ],
-        "rgbInteger": [
-          142,
-          74,
-          234
-        ]
-      },
-      {
-        "score": 2485,
-        "rgbHex": "#8a4de9",
-        "rgbDecimal": 9063913,
-        "rgbFloat": [
-          0.54,
-          0.3,
-          0.91
-        ],
-        "rgbInteger": [
-          138,
-          77,
-          233
-        ]
-      },
-      {
-        "score": 2460,
-        "rgbHex": "#8550e9",
-        "rgbDecimal": 8737001,
-        "rgbFloat": [
-          0.52,
-          0.31,
-          0.91
-        ],
-        "rgbInteger": [
-          133,
-          80,
-          233
-        ]
-      },
-      {
-        "score": 2435,
-        "rgbHex": "#8053e8",
-        "rgbDecimal": 8410088,
-        "rgbFloat": [
-          0.5,
-          0.33,
-          0.91
-        ],
-        "rgbInteger": [
-          128,
-          83,
-          232
-        ]
-      },
-      {
-        "score": 2410,
-        "rgbHex": "#7b56e7",
-        "rgbDecimal": 8083175,
-        "rgbFloat": [
-          0.48,
-          0.34,
-          0.91
-        ],
-        "rgbInteger": [
-          123,
-          86,
-          231
-        ]
-      },
-      {
-        "score": 2385,
-        "rgbHex": "#7658e6",
-        "rgbDecimal": 7756006,
-        "rgbFloat": [
-          0.46,
-          0.35,
-          0.9
-        ],
-        "rgbInteger": [
-          118,
-          88,
-          230
-        ]
-      },
-      {
-        "score": 2365,
-        "rgbHex": "#715be5",
-        "rgbDecimal": 7429093,
-        "rgbFloat": [
-          0.44,
-          0.36,
-          0.9
-        ],
-        "rgbInteger": [
-          113,
-          91,
-          229
-        ]
-      },
-      {
-        "score": 2340,
-        "rgbHex": "#6c5de5",
-        "rgbDecimal": 7101925,
-        "rgbFloat": [
-          0.42,
-          0.36,
-          0.9
-        ],
-        "rgbInteger": [
-          108,
-          93,
-          229
-        ]
-      },
-      {
-        "score": 2315,
-        "rgbHex": "#665fe4",
-        "rgbDecimal": 6709220,
-        "rgbFloat": [
-          0.4,
-          0.37,
-          0.89
-        ],
-        "rgbInteger": [
-          102,
-          95,
-          228
-        ]
-      },
-      {
-        "score": 2290,
-        "rgbHex": "#6062e3",
-        "rgbDecimal": 6316771,
-        "rgbFloat": [
-          0.38,
-          0.38,
-          0.89
-        ],
-        "rgbInteger": [
-          96,
-          98,
-          227
-        ]
-      },
-      {
-        "score": 2265,
-        "rgbHex": "#5a64e2",
-        "rgbDecimal": 5924066,
-        "rgbFloat": [
-          0.35,
-          0.39,
-          0.89
-        ],
-        "rgbInteger": [
-          90,
-          100,
-          226
-        ]
-      },
-      {
-        "score": 2245,
-        "rgbHex": "#5366e2",
-        "rgbDecimal": 5465826,
-        "rgbFloat": [
-          0.33,
-          0.4,
-          0.89
-        ],
-        "rgbInteger": [
-          83,
-          102,
-          226
-        ]
-      },
-      {
-        "score": 2220,
-        "rgbHex": "#4b67e1",
-        "rgbDecimal": 4941793,
-        "rgbFloat": [
-          0.29,
-          0.4,
-          0.88
-        ],
-        "rgbInteger": [
-          75,
-          103,
-          225
-        ]
-      },
-      {
-        "score": 2195,
-        "rgbHex": "#4369e0",
-        "rgbDecimal": 4418016,
-        "rgbFloat": [
-          0.26,
-          0.41,
-          0.88
-        ],
-        "rgbInteger": [
-          67,
-          105,
-          224
-        ]
-      },
-      {
-        "score": 2170,
-        "rgbHex": "#3a6bdf",
-        "rgbDecimal": 3828703,
-        "rgbFloat": [
-          0.23,
-          0.42,
-          0.87
-        ],
-        "rgbInteger": [
-          58,
-          107,
-          223
-        ]
-      },
-      {
-        "score": 2145,
-        "rgbHex": "#2e6ddf",
-        "rgbDecimal": 3042783,
-        "rgbFloat": [
-          0.18,
-          0.43,
-          0.87
-        ],
-        "rgbInteger": [
-          46,
-          109,
-          223
-        ]
-      },
-      {
-        "score": 2125,
-        "rgbHex": "#1f6ede",
-        "rgbDecimal": 2059998,
-        "rgbFloat": [
-          0.12,
-          0.43,
-          0.87
-        ],
-        "rgbInteger": [
-          31,
-          110,
-          222
-        ]
-      },
-      {
-        "score": 2100,
-        "rgbHex": "#0070dd",
-        "rgbDecimal": 28893,
-        "rgbFloat": [
-          0,
-          0.44,
-          0.87
-        ],
-        "rgbInteger": [
-          0,
-          112,
-          221
-        ]
-      },
-      {
-        "score": 2015,
-        "rgbHex": "#1472db",
-        "rgbDecimal": 1340123,
-        "rgbFloat": [
-          0.08,
-          0.45,
-          0.86
-        ],
-        "rgbInteger": [
-          20,
-          114,
-          219
-        ]
-      },
-      {
-        "score": 1990,
-        "rgbHex": "#1f74d8",
-        "rgbDecimal": 2061528,
-        "rgbFloat": [
-          0.12,
-          0.45,
-          0.85
-        ],
-        "rgbInteger": [
-          31,
-          116,
-          216
-        ]
-      },
-      {
-        "score": 1965,
-        "rgbHex": "#2777d6",
-        "rgbDecimal": 2586582,
-        "rgbFloat": [
-          0.15,
-          0.47,
-          0.84
-        ],
-        "rgbInteger": [
-          39,
-          119,
-          214
-        ]
-      },
-      {
-        "score": 1940,
-        "rgbHex": "#2e79d4",
-        "rgbDecimal": 3045844,
-        "rgbFloat": [
-          0.18,
-          0.47,
-          0.83
-        ],
-        "rgbInteger": [
-          46,
-          121,
-          212
-        ]
-      },
-      {
-        "score": 1920,
-        "rgbHex": "#337bd1",
-        "rgbDecimal": 3374033,
-        "rgbFloat": [
-          0.2,
-          0.48,
-          0.82
-        ],
-        "rgbInteger": [
-          51,
-          123,
-          209
-        ]
-      },
-      {
-        "score": 1895,
-        "rgbHex": "#387dcf",
-        "rgbDecimal": 3702223,
-        "rgbFloat": [
-          0.22,
-          0.49,
-          0.81
-        ],
-        "rgbInteger": [
-          56,
-          125,
-          207
-        ]
-      },
-      {
-        "score": 1870,
-        "rgbHex": "#3c80cc",
-        "rgbDecimal": 3965132,
-        "rgbFloat": [
-          0.24,
-          0.5,
-          0.8
-        ],
-        "rgbInteger": [
-          60,
-          128,
-          204
-        ]
-      },
-      {
-        "score": 1845,
-        "rgbHex": "#3f82ca",
-        "rgbDecimal": 4162250,
-        "rgbFloat": [
-          0.25,
-          0.51,
-          0.79
-        ],
-        "rgbInteger": [
-          63,
-          130,
-          202
-        ]
-      },
-      {
-        "score": 1820,
-        "rgbHex": "#4384c8",
-        "rgbDecimal": 4424904,
-        "rgbFloat": [
-          0.26,
-          0.52,
-          0.78
-        ],
-        "rgbInteger": [
-          67,
-          132,
-          200
-        ]
-      },
-      {
-        "score": 1800,
-        "rgbHex": "#4686c5",
-        "rgbDecimal": 4622021,
-        "rgbFloat": [
-          0.27,
-          0.53,
-          0.77
-        ],
-        "rgbInteger": [
-          70,
-          134,
-          197
-        ]
-      },
-      {
-        "score": 1775,
-        "rgbHex": "#4889c3",
-        "rgbDecimal": 4753859,
-        "rgbFloat": [
-          0.28,
-          0.54,
-          0.76
-        ],
-        "rgbInteger": [
-          72,
-          137,
-          195
-        ]
-      },
-      {
-        "score": 1750,
-        "rgbHex": "#4b8bc1",
-        "rgbDecimal": 4950977,
-        "rgbFloat": [
-          0.29,
-          0.55,
-          0.76
-        ],
-        "rgbInteger": [
-          75,
-          139,
-          193
-        ]
-      },
-      {
-        "score": 1725,
-        "rgbHex": "#4d8dbe",
-        "rgbDecimal": 5082558,
-        "rgbFloat": [
-          0.3,
-          0.55,
-          0.75
-        ],
-        "rgbInteger": [
-          77,
-          141,
-          190
-        ]
-      },
-      {
-        "score": 1700,
-        "rgbHex": "#4f90bc",
-        "rgbDecimal": 5214396,
-        "rgbFloat": [
-          0.31,
-          0.56,
-          0.74
-        ],
-        "rgbInteger": [
-          79,
-          144,
-          188
-        ]
-      },
-      {
-        "score": 1680,
-        "rgbHex": "#5192b9",
-        "rgbDecimal": 5345977,
-        "rgbFloat": [
-          0.32,
-          0.57,
-          0.73
-        ],
-        "rgbInteger": [
-          81,
-          146,
-          185
-        ]
-      },
-      {
-        "score": 1655,
-        "rgbHex": "#5394b7",
-        "rgbDecimal": 5477559,
-        "rgbFloat": [
-          0.33,
-          0.58,
-          0.72
-        ],
-        "rgbInteger": [
-          83,
-          148,
-          183
-        ]
-      },
-      {
-        "score": 1630,
-        "rgbHex": "#5596b4",
-        "rgbDecimal": 5609140,
-        "rgbFloat": [
-          0.33,
-          0.59,
-          0.71
-        ],
-        "rgbInteger": [
-          85,
-          150,
-          180
-        ]
-      },
-      {
-        "score": 1605,
-        "rgbHex": "#5699b2",
-        "rgbDecimal": 5675442,
-        "rgbFloat": [
-          0.34,
-          0.6,
-          0.7
-        ],
-        "rgbInteger": [
-          86,
-          153,
-          178
-        ]
-      },
-      {
-        "score": 1580,
-        "rgbHex": "#589baf",
-        "rgbDecimal": 5807023,
-        "rgbFloat": [
-          0.35,
-          0.61,
-          0.69
-        ],
-        "rgbInteger": [
-          88,
-          155,
-          175
-        ]
-      },
-      {
-        "score": 1560,
-        "rgbHex": "#599dad",
-        "rgbDecimal": 5873069,
-        "rgbFloat": [
-          0.35,
-          0.62,
-          0.68
-        ],
-        "rgbInteger": [
-          89,
-          157,
-          173
-        ]
-      },
-      {
-        "score": 1535,
-        "rgbHex": "#5aa0aa",
-        "rgbDecimal": 5939370,
-        "rgbFloat": [
-          0.35,
-          0.63,
-          0.67
-        ],
-        "rgbInteger": [
-          90,
-          160,
-          170
-        ]
-      },
-      {
-        "score": 1510,
-        "rgbHex": "#5ba2a8",
-        "rgbDecimal": 6005416,
-        "rgbFloat": [
-          0.36,
-          0.64,
-          0.66
-        ],
-        "rgbInteger": [
-          91,
-          162,
-          168
-        ]
-      },
-      {
-        "score": 1485,
-        "rgbHex": "#5ca4a5",
-        "rgbDecimal": 6071461,
-        "rgbFloat": [
-          0.36,
-          0.64,
-          0.65
-        ],
-        "rgbInteger": [
-          92,
-          164,
-          165
-        ]
-      },
-      {
-        "score": 1460,
-        "rgbHex": "#5da7a3",
-        "rgbDecimal": 6137763,
-        "rgbFloat": [
-          0.36,
-          0.65,
-          0.64
-        ],
-        "rgbInteger": [
-          93,
-          167,
-          163
-        ]
-      },
-      {
-        "score": 1440,
-        "rgbHex": "#5da9a0",
-        "rgbDecimal": 6138272,
-        "rgbFloat": [
-          0.36,
-          0.66,
-          0.63
-        ],
-        "rgbInteger": [
-          93,
-          169,
-          160
-        ]
-      },
-      {
-        "score": 1415,
-        "rgbHex": "#5eab9e",
-        "rgbDecimal": 6204318,
-        "rgbFloat": [
-          0.37,
-          0.67,
-          0.62
-        ],
-        "rgbInteger": [
-          94,
-          171,
-          158
-        ]
-      },
-      {
-        "score": 1390,
-        "rgbHex": "#5eae9b",
-        "rgbDecimal": 6205083,
-        "rgbFloat": [
-          0.37,
-          0.68,
-          0.61
-        ],
-        "rgbInteger": [
-          94,
-          174,
-          155
-        ]
-      },
-      {
-        "score": 1365,
-        "rgbHex": "#5fb099",
-        "rgbDecimal": 6271129,
-        "rgbFloat": [
-          0.37,
-          0.69,
-          0.6
-        ],
-        "rgbInteger": [
-          95,
-          176,
-          153
-        ]
-      },
-      {
-        "score": 1340,
-        "rgbHex": "#5fb296",
-        "rgbDecimal": 6271638,
-        "rgbFloat": [
-          0.37,
-          0.7,
-          0.59
-        ],
-        "rgbInteger": [
-          95,
-          178,
-          150
-        ]
-      },
-      {
-        "score": 1320,
-        "rgbHex": "#5fb593",
-        "rgbDecimal": 6272403,
-        "rgbFloat": [
-          0.37,
-          0.71,
-          0.58
-        ],
-        "rgbInteger": [
-          95,
-          181,
-          147
-        ]
-      },
-      {
-        "score": 1295,
-        "rgbHex": "#5fb791",
-        "rgbDecimal": 6272913,
-        "rgbFloat": [
-          0.37,
-          0.72,
-          0.57
-        ],
-        "rgbInteger": [
-          95,
-          183,
-          145
-        ]
-      },
-      {
-        "score": 1270,
-        "rgbHex": "#5fb98e",
-        "rgbDecimal": 6273422,
-        "rgbFloat": [
-          0.37,
-          0.73,
-          0.56
-        ],
-        "rgbInteger": [
-          95,
-          185,
-          142
-        ]
-      },
-      {
-        "score": 1245,
-        "rgbHex": "#5fbc8b",
-        "rgbDecimal": 6274187,
-        "rgbFloat": [
-          0.37,
-          0.74,
-          0.55
-        ],
-        "rgbInteger": [
-          95,
-          188,
-          139
-        ]
-      },
-      {
-        "score": 1220,
-        "rgbHex": "#5fbe88",
-        "rgbDecimal": 6274696,
-        "rgbFloat": [
-          0.37,
-          0.75,
-          0.53
-        ],
-        "rgbInteger": [
-          95,
-          190,
-          136
-        ]
-      },
-      {
-        "score": 1200,
-        "rgbHex": "#5fc086",
-        "rgbDecimal": 6275206,
-        "rgbFloat": [
-          0.37,
-          0.75,
-          0.53
-        ],
-        "rgbInteger": [
-          95,
-          192,
-          134
-        ]
-      },
-      {
-        "score": 1175,
-        "rgbHex": "#5fc383",
-        "rgbDecimal": 6275971,
-        "rgbFloat": [
-          0.37,
-          0.76,
-          0.51
-        ],
-        "rgbInteger": [
-          95,
-          195,
-          131
-        ]
-      },
-      {
-        "score": 1150,
-        "rgbHex": "#5ec580",
-        "rgbDecimal": 6210944,
-        "rgbFloat": [
-          0.37,
-          0.77,
-          0.5
-        ],
-        "rgbInteger": [
-          94,
-          197,
-          128
-        ]
-      },
-      {
-        "score": 1125,
-        "rgbHex": "#5ec87d",
-        "rgbDecimal": 6211709,
-        "rgbFloat": [
-          0.37,
-          0.78,
-          0.49
-        ],
-        "rgbInteger": [
-          94,
-          200,
-          125
-        ]
-      },
-      {
-        "score": 1100,
-        "rgbHex": "#5dca7a",
-        "rgbDecimal": 6146682,
-        "rgbFloat": [
-          0.36,
-          0.79,
-          0.48
-        ],
-        "rgbInteger": [
-          93,
-          202,
-          122
-        ]
-      },
-      {
-        "score": 1080,
-        "rgbHex": "#5ccc77",
-        "rgbDecimal": 6081655,
-        "rgbFloat": [
-          0.36,
-          0.8,
-          0.47
-        ],
-        "rgbInteger": [
-          92,
-          204,
-          119
-        ]
-      },
-      {
-        "score": 1055,
-        "rgbHex": "#5bcf74",
-        "rgbDecimal": 6016884,
-        "rgbFloat": [
-          0.36,
-          0.81,
-          0.45
-        ],
-        "rgbInteger": [
-          91,
-          207,
-          116
-        ]
-      },
-      {
-        "score": 1030,
-        "rgbHex": "#5ad171",
-        "rgbDecimal": 5951857,
-        "rgbFloat": [
-          0.35,
-          0.82,
-          0.44
-        ],
-        "rgbInteger": [
-          90,
-          209,
-          113
-        ]
-      },
-      {
-        "score": 1005,
-        "rgbHex": "#59d36e",
-        "rgbDecimal": 5886830,
-        "rgbFloat": [
-          0.35,
-          0.83,
-          0.43
-        ],
-        "rgbInteger": [
-          89,
-          211,
-          110
-        ]
-      },
-      {
-        "score": 980,
-        "rgbHex": "#58d66a",
-        "rgbDecimal": 5822058,
-        "rgbFloat": [
-          0.35,
-          0.84,
-          0.42
-        ],
-        "rgbInteger": [
-          88,
-          214,
-          106
-        ]
-      },
-      {
-        "score": 960,
-        "rgbHex": "#57d867",
-        "rgbDecimal": 5757031,
-        "rgbFloat": [
-          0.34,
-          0.85,
-          0.4
-        ],
-        "rgbInteger": [
-          87,
-          216,
-          103
-        ]
-      },
-      {
-        "score": 935,
-        "rgbHex": "#55db64",
-        "rgbDecimal": 5626724,
-        "rgbFloat": [
-          0.33,
-          0.86,
-          0.39
-        ],
-        "rgbInteger": [
-          85,
-          219,
-          100
-        ]
-      },
-      {
-        "score": 910,
-        "rgbHex": "#54dd60",
-        "rgbDecimal": 5561696,
-        "rgbFloat": [
-          0.33,
-          0.87,
-          0.38
-        ],
-        "rgbInteger": [
-          84,
-          221,
-          96
-        ]
-      },
-      {
-        "score": 885,
-        "rgbHex": "#52df5c",
-        "rgbDecimal": 5431132,
-        "rgbFloat": [
-          0.32,
-          0.87,
-          0.36
-        ],
-        "rgbInteger": [
-          82,
-          223,
-          92
-        ]
-      },
-      {
-        "score": 860,
-        "rgbHex": "#50e259",
-        "rgbDecimal": 5300825,
-        "rgbFloat": [
-          0.31,
-          0.89,
-          0.35
-        ],
-        "rgbInteger": [
-          80,
-          226,
-          89
-        ]
-      },
-      {
-        "score": 840,
-        "rgbHex": "#4ee455",
-        "rgbDecimal": 5170261,
-        "rgbFloat": [
-          0.31,
-          0.89,
-          0.33
-        ],
-        "rgbInteger": [
-          78,
-          228,
-          85
-        ]
-      },
-      {
-        "score": 815,
-        "rgbHex": "#4ce750",
-        "rgbDecimal": 5039952,
-        "rgbFloat": [
-          0.3,
-          0.91,
-          0.31
-        ],
-        "rgbInteger": [
-          76,
-          231,
-          80
-        ]
-      },
-      {
-        "score": 790,
-        "rgbHex": "#49e94c",
-        "rgbDecimal": 4843852,
-        "rgbFloat": [
-          0.29,
-          0.91,
-          0.3
-        ],
-        "rgbInteger": [
-          73,
-          233,
-          76
-        ]
-      },
-      {
-        "score": 765,
-        "rgbHex": "#46ec48",
-        "rgbDecimal": 4648008,
-        "rgbFloat": [
-          0.27,
-          0.93,
-          0.28
-        ],
-        "rgbInteger": [
-          70,
-          236,
-          72
-        ]
-      },
-      {
-        "score": 740,
-        "rgbHex": "#43ee43",
-        "rgbDecimal": 4451907,
-        "rgbFloat": [
-          0.26,
-          0.93,
-          0.26
-        ],
-        "rgbInteger": [
-          67,
-          238,
-          67
-        ]
-      },
-      {
-        "score": 720,
-        "rgbHex": "#40f03d",
-        "rgbDecimal": 4255805,
-        "rgbFloat": [
-          0.25,
-          0.94,
-          0.24
-        ],
-        "rgbInteger": [
-          64,
-          240,
-          61
-        ]
-      },
-      {
-        "score": 695,
-        "rgbHex": "#3cf338",
-        "rgbDecimal": 3994424,
-        "rgbFloat": [
-          0.24,
-          0.95,
-          0.22
-        ],
-        "rgbInteger": [
-          60,
-          243,
-          56
-        ]
-      },
-      {
-        "score": 670,
-        "rgbHex": "#38f531",
-        "rgbDecimal": 3732785,
-        "rgbFloat": [
-          0.22,
-          0.96,
-          0.19
-        ],
-        "rgbInteger": [
-          56,
-          245,
-          49
-        ]
-      },
-      {
-        "score": 645,
-        "rgbHex": "#33f82a",
-        "rgbDecimal": 3405866,
-        "rgbFloat": [
-          0.2,
-          0.97,
-          0.16
-        ],
-        "rgbInteger": [
-          51,
-          248,
-          42
-        ]
-      },
-      {
-        "score": 620,
-        "rgbHex": "#2dfa21",
-        "rgbDecimal": 3013153,
-        "rgbFloat": [
-          0.18,
-          0.98,
-          0.13
-        ],
-        "rgbInteger": [
-          45,
-          250,
-          33
-        ]
-      },
-      {
-        "score": 600,
-        "rgbHex": "#27fd15",
-        "rgbDecimal": 2620693,
-        "rgbFloat": [
-          0.15,
-          0.99,
-          0.08
-        ],
-        "rgbInteger": [
-          39,
-          253,
-          21
-        ]
-      },
-      {
-        "score": 575,
-        "rgbHex": "#1eff00",
-        "rgbDecimal": 2031360,
-        "rgbFloat": [
-          0.12,
-          1,
-          0
-        ],
-        "rgbInteger": [
-          30,
-          255,
-          0
-        ]
-      },
-      {
-        "score": 550,
-        "rgbHex": "#48ff2e",
-        "rgbDecimal": 4783918,
-        "rgbFloat": [
-          0.28,
-          1,
-          0.18
-        ],
-        "rgbInteger": [
-          72,
-          255,
-          46
-        ]
-      },
-      {
-        "score": 525,
-        "rgbHex": "#60ff45",
-        "rgbDecimal": 6356805,
-        "rgbFloat": [
-          0.38,
-          1,
-          0.27
-        ],
-        "rgbInteger": [
-          96,
-          255,
-          69
-        ]
-      },
-      {
-        "score": 500,
-        "rgbHex": "#74ff57",
-        "rgbDecimal": 7667543,
-        "rgbFloat": [
-          0.45,
-          1,
-          0.34
-        ],
-        "rgbInteger": [
-          116,
-          255,
-          87
-        ]
-      },
-      {
-        "score": 475,
-        "rgbHex": "#84ff68",
-        "rgbDecimal": 8716136,
-        "rgbFloat": [
-          0.52,
-          1,
-          0.41
-        ],
-        "rgbInteger": [
-          132,
-          255,
-          104
-        ]
-      },
-      {
-        "score": 450,
-        "rgbHex": "#93ff77",
-        "rgbDecimal": 9699191,
-        "rgbFloat": [
-          0.58,
-          1,
-          0.47
-        ],
-        "rgbInteger": [
-          147,
-          255,
-          119
-        ]
-      },
-      {
-        "score": 425,
-        "rgbHex": "#a0ff85",
-        "rgbDecimal": 10551173,
-        "rgbFloat": [
-          0.63,
-          1,
-          0.52
-        ],
-        "rgbInteger": [
-          160,
-          255,
-          133
-        ]
-      },
-      {
-        "score": 400,
-        "rgbHex": "#adff94",
-        "rgbDecimal": 11403156,
-        "rgbFloat": [
-          0.68,
-          1,
-          0.58
-        ],
-        "rgbInteger": [
-          173,
-          255,
-          148
-        ]
-      },
-      {
-        "score": 375,
-        "rgbHex": "#b9ffa1",
-        "rgbDecimal": 12189601,
-        "rgbFloat": [
-          0.73,
-          1,
-          0.63
-        ],
-        "rgbInteger": [
-          185,
-          255,
-          161
-        ]
-      },
-      {
-        "score": 350,
-        "rgbHex": "#c4ffaf",
-        "rgbDecimal": 12910511,
-        "rgbFloat": [
-          0.77,
-          1,
-          0.69
-        ],
-        "rgbInteger": [
-          196,
-          255,
-          175
-        ]
-      },
-      {
-        "score": 325,
-        "rgbHex": "#cfffbc",
-        "rgbDecimal": 13631420,
-        "rgbFloat": [
-          0.81,
-          1,
-          0.74
-        ],
-        "rgbInteger": [
-          207,
-          255,
-          188
-        ]
-      },
-      {
-        "score": 300,
-        "rgbHex": "#d9ffca",
-        "rgbDecimal": 14286794,
-        "rgbFloat": [
-          0.85,
-          1,
-          0.79
-        ],
-        "rgbInteger": [
-          217,
-          255,
-          202
-        ]
-      },
-      {
-        "score": 275,
-        "rgbHex": "#e3ffd7",
-        "rgbDecimal": 14942167,
-        "rgbFloat": [
-          0.89,
-          1,
-          0.84
-        ],
-        "rgbInteger": [
-          227,
-          255,
-          215
-        ]
-      },
-      {
-        "score": 250,
-        "rgbHex": "#edffe4",
-        "rgbDecimal": 15597540,
-        "rgbFloat": [
-          0.93,
-          1,
-          0.89
-        ],
-        "rgbInteger": [
-          237,
-          255,
-          228
-        ]
-      },
-      {
-        "score": 225,
-        "rgbHex": "#f6fff2",
-        "rgbDecimal": 16187378,
-        "rgbFloat": [
-          0.96,
-          1,
-          0.95
-        ],
-        "rgbInteger": [
-          246,
-          255,
-          242
-        ]
-      },
-      {
-        "score": 200,
-        "rgbHex": "#ffffff",
-        "rgbDecimal": 16777215,
-        "rgbFloat": [
-          1,
-          1,
-          1
-        ],
-        "rgbInteger": [
-          255,
-          255,
-          255
-        ]
+          "score": 2000,
+          "rgbHex": "#ff8000",
+          "rgbDecimal": 16744448,
+          "rgbFloat": [
+              1,
+              0.5,
+              0
+          ],
+          "rgbInteger": [
+              255,
+              128,
+              0
+          ]
+      },
+      {
+          "score": 1950,
+          "rgbHex": "#fd7d1d",
+          "rgbDecimal": 16612637,
+          "rgbFloat": [
+              0.99,
+              0.49,
+              0.11
+          ],
+          "rgbInteger": [
+              253,
+              125,
+              29
+          ]
+      },
+      {
+          "score": 1925,
+          "rgbHex": "#fc7a2c",
+          "rgbDecimal": 16546348,
+          "rgbFloat": [
+              0.99,
+              0.48,
+              0.17
+          ],
+          "rgbInteger": [
+              252,
+              122,
+              44
+          ]
+      },
+      {
+          "score": 1905,
+          "rgbHex": "#fa7639",
+          "rgbDecimal": 16414265,
+          "rgbFloat": [
+              0.98,
+              0.46,
+              0.22
+          ],
+          "rgbInteger": [
+              250,
+              118,
+              57
+          ]
+      },
+      {
+          "score": 1880,
+          "rgbHex": "#f87344",
+          "rgbDecimal": 16282436,
+          "rgbFloat": [
+              0.97,
+              0.45,
+              0.27
+          ],
+          "rgbInteger": [
+              248,
+              115,
+              68
+          ]
+      },
+      {
+          "score": 1855,
+          "rgbHex": "#f6704e",
+          "rgbDecimal": 16150606,
+          "rgbFloat": [
+              0.96,
+              0.44,
+              0.31
+          ],
+          "rgbInteger": [
+              246,
+              112,
+              78
+          ]
+      },
+      {
+          "score": 1830,
+          "rgbHex": "#f36d57",
+          "rgbDecimal": 15953239,
+          "rgbFloat": [
+              0.95,
+              0.43,
+              0.34
+          ],
+          "rgbInteger": [
+              243,
+              109,
+              87
+          ]
+      },
+      {
+          "score": 1805,
+          "rgbHex": "#f16960",
+          "rgbDecimal": 15821152,
+          "rgbFloat": [
+              0.95,
+              0.41,
+              0.38
+          ],
+          "rgbInteger": [
+              241,
+              105,
+              96
+          ]
+      },
+      {
+          "score": 1785,
+          "rgbHex": "#ee6669",
+          "rgbDecimal": 15623785,
+          "rgbFloat": [
+              0.93,
+              0.4,
+              0.41
+          ],
+          "rgbInteger": [
+              238,
+              102,
+              105
+          ]
+      },
+      {
+          "score": 1760,
+          "rgbHex": "#ec6371",
+          "rgbDecimal": 15491953,
+          "rgbFloat": [
+              0.93,
+              0.39,
+              0.44
+          ],
+          "rgbInteger": [
+              236,
+              99,
+              113
+          ]
+      },
+      {
+          "score": 1735,
+          "rgbHex": "#e95f7a",
+          "rgbDecimal": 15294330,
+          "rgbFloat": [
+              0.91,
+              0.37,
+              0.48
+          ],
+          "rgbInteger": [
+              233,
+              95,
+              122
+          ]
+      },
+      {
+          "score": 1710,
+          "rgbHex": "#e65c82",
+          "rgbDecimal": 15096962,
+          "rgbFloat": [
+              0.9,
+              0.36,
+              0.51
+          ],
+          "rgbInteger": [
+              230,
+              92,
+              130
+          ]
+      },
+      {
+          "score": 1685,
+          "rgbHex": "#e3598b",
+          "rgbDecimal": 14899595,
+          "rgbFloat": [
+              0.89,
+              0.35,
+              0.55
+          ],
+          "rgbInteger": [
+              227,
+              89,
+              139
+          ]
+      },
+      {
+          "score": 1665,
+          "rgbHex": "#df5693",
+          "rgbDecimal": 14636691,
+          "rgbFloat": [
+              0.87,
+              0.34,
+              0.58
+          ],
+          "rgbInteger": [
+              223,
+              86,
+              147
+          ]
+      },
+      {
+          "score": 1640,
+          "rgbHex": "#dc539b",
+          "rgbDecimal": 14439323,
+          "rgbFloat": [
+              0.86,
+              0.33,
+              0.61
+          ],
+          "rgbInteger": [
+              220,
+              83,
+              155
+          ]
+      },
+      {
+          "score": 1615,
+          "rgbHex": "#d84fa3",
+          "rgbDecimal": 14176163,
+          "rgbFloat": [
+              0.85,
+              0.31,
+              0.64
+          ],
+          "rgbInteger": [
+              216,
+              79,
+              163
+          ]
+      },
+      {
+          "score": 1590,
+          "rgbHex": "#d34cac",
+          "rgbDecimal": 13847724,
+          "rgbFloat": [
+              0.83,
+              0.3,
+              0.67
+          ],
+          "rgbInteger": [
+              211,
+              76,
+              172
+          ]
+      },
+      {
+          "score": 1565,
+          "rgbHex": "#cf49b4",
+          "rgbDecimal": 13584820,
+          "rgbFloat": [
+              0.81,
+              0.29,
+              0.71
+          ],
+          "rgbInteger": [
+              207,
+              73,
+              180
+          ]
+      },
+      {
+          "score": 1545,
+          "rgbHex": "#ca46bc",
+          "rgbDecimal": 13256380,
+          "rgbFloat": [
+              0.79,
+              0.27,
+              0.74
+          ],
+          "rgbInteger": [
+              202,
+              70,
+              188
+          ]
+      },
+      {
+          "score": 1520,
+          "rgbHex": "#c543c4",
+          "rgbDecimal": 12927940,
+          "rgbFloat": [
+              0.77,
+              0.26,
+              0.77
+          ],
+          "rgbInteger": [
+              197,
+              67,
+              196
+          ]
+      },
+      {
+          "score": 1495,
+          "rgbHex": "#bf40cd",
+          "rgbDecimal": 12533965,
+          "rgbFloat": [
+              0.75,
+              0.25,
+              0.8
+          ],
+          "rgbInteger": [
+              191,
+              64,
+              205
+          ]
+      },
+      {
+          "score": 1470,
+          "rgbHex": "#b93dd5",
+          "rgbDecimal": 12139989,
+          "rgbFloat": [
+              0.73,
+              0.24,
+              0.84
+          ],
+          "rgbInteger": [
+              185,
+              61,
+              213
+          ]
+      },
+      {
+          "score": 1445,
+          "rgbHex": "#b23add",
+          "rgbDecimal": 11680477,
+          "rgbFloat": [
+              0.7,
+              0.23,
+              0.87
+          ],
+          "rgbInteger": [
+              178,
+              58,
+              221
+          ]
+      },
+      {
+          "score": 1425,
+          "rgbHex": "#ab38e6",
+          "rgbDecimal": 11221222,
+          "rgbFloat": [
+              0.67,
+              0.22,
+              0.9
+          ],
+          "rgbInteger": [
+              171,
+              56,
+              230
+          ]
+      },
+      {
+          "score": 1400,
+          "rgbHex": "#a335ee",
+          "rgbDecimal": 10696174,
+          "rgbFloat": [
+              0.64,
+              0.21,
+              0.93
+          ],
+          "rgbInteger": [
+              163,
+              53,
+              238
+          ]
+      },
+      {
+          "score": 1355,
+          "rgbHex": "#9e3bed",
+          "rgbDecimal": 10370029,
+          "rgbFloat": [
+              0.62,
+              0.23,
+              0.93
+          ],
+          "rgbInteger": [
+              158,
+              59,
+              237
+          ]
+      },
+      {
+          "score": 1335,
+          "rgbHex": "#9940ec",
+          "rgbDecimal": 10043628,
+          "rgbFloat": [
+              0.6,
+              0.25,
+              0.93
+          ],
+          "rgbInteger": [
+              153,
+              64,
+              236
+          ]
+      },
+      {
+          "score": 1310,
+          "rgbHex": "#9445eb",
+          "rgbDecimal": 9717227,
+          "rgbFloat": [
+              0.58,
+              0.27,
+              0.92
+          ],
+          "rgbInteger": [
+              148,
+              69,
+              235
+          ]
+      },
+      {
+          "score": 1285,
+          "rgbHex": "#8e49ea",
+          "rgbDecimal": 9325034,
+          "rgbFloat": [
+              0.56,
+              0.29,
+              0.92
+          ],
+          "rgbInteger": [
+              142,
+              73,
+              234
+          ]
+      },
+      {
+          "score": 1260,
+          "rgbHex": "#894de9",
+          "rgbDecimal": 8998377,
+          "rgbFloat": [
+              0.54,
+              0.3,
+              0.91
+          ],
+          "rgbInteger": [
+              137,
+              77,
+              233
+          ]
+      },
+      {
+          "score": 1235,
+          "rgbHex": "#8351e8",
+          "rgbDecimal": 8606184,
+          "rgbFloat": [
+              0.51,
+              0.32,
+              0.91
+          ],
+          "rgbInteger": [
+              131,
+              81,
+              232
+          ]
+      },
+      {
+          "score": 1215,
+          "rgbHex": "#7e55e7",
+          "rgbDecimal": 8279527,
+          "rgbFloat": [
+              0.49,
+              0.33,
+              0.91
+          ],
+          "rgbInteger": [
+              126,
+              85,
+              231
+          ]
+      },
+      {
+          "score": 1190,
+          "rgbHex": "#7858e6",
+          "rgbDecimal": 7887078,
+          "rgbFloat": [
+              0.47,
+              0.35,
+              0.9
+          ],
+          "rgbInteger": [
+              120,
+              88,
+              230
+          ]
+      },
+      {
+          "score": 1165,
+          "rgbHex": "#715be5",
+          "rgbDecimal": 7429093,
+          "rgbFloat": [
+              0.44,
+              0.36,
+              0.9
+          ],
+          "rgbInteger": [
+              113,
+              91,
+              229
+          ]
+      },
+      {
+          "score": 1140,
+          "rgbHex": "#6a5ee5",
+          "rgbDecimal": 6971109,
+          "rgbFloat": [
+              0.42,
+              0.37,
+              0.9
+          ],
+          "rgbInteger": [
+              106,
+              94,
+              229
+          ]
+      },
+      {
+          "score": 1115,
+          "rgbHex": "#6360e4",
+          "rgbDecimal": 6512868,
+          "rgbFloat": [
+              0.39,
+              0.38,
+              0.89
+          ],
+          "rgbInteger": [
+              99,
+              96,
+              228
+          ]
+      },
+      {
+          "score": 1095,
+          "rgbHex": "#5c63e3",
+          "rgbDecimal": 6054883,
+          "rgbFloat": [
+              0.36,
+              0.39,
+              0.89
+          ],
+          "rgbInteger": [
+              92,
+              99,
+              227
+          ]
+      },
+      {
+          "score": 1070,
+          "rgbHex": "#5465e2",
+          "rgbDecimal": 5531106,
+          "rgbFloat": [
+              0.33,
+              0.4,
+              0.89
+          ],
+          "rgbInteger": [
+              84,
+              101,
+              226
+          ]
+      },
+      {
+          "score": 1045,
+          "rgbHex": "#4b68e1",
+          "rgbDecimal": 4942049,
+          "rgbFloat": [
+              0.29,
+              0.41,
+              0.88
+          ],
+          "rgbInteger": [
+              75,
+              104,
+              225
+          ]
+      },
+      {
+          "score": 1020,
+          "rgbHex": "#406ae0",
+          "rgbDecimal": 4221664,
+          "rgbFloat": [
+              0.25,
+              0.42,
+              0.88
+          ],
+          "rgbInteger": [
+              64,
+              106,
+              224
+          ]
+      },
+      {
+          "score": 995,
+          "rgbHex": "#346cdf",
+          "rgbDecimal": 3435743,
+          "rgbFloat": [
+              0.2,
+              0.42,
+              0.87
+          ],
+          "rgbInteger": [
+              52,
+              108,
+              223
+          ]
+      },
+      {
+          "score": 975,
+          "rgbHex": "#236ede",
+          "rgbDecimal": 2322142,
+          "rgbFloat": [
+              0.14,
+              0.43,
+              0.87
+          ],
+          "rgbInteger": [
+              35,
+              110,
+              222
+          ]
+      },
+      {
+          "score": 950,
+          "rgbHex": "#0070dd",
+          "rgbDecimal": 28893,
+          "rgbFloat": [
+              0,
+              0.44,
+              0.87
+          ],
+          "rgbInteger": [
+              0,
+              112,
+              221
+          ]
+      },
+      {
+          "score": 900,
+          "rgbHex": "#2275d7",
+          "rgbDecimal": 2258391,
+          "rgbFloat": [
+              0.13,
+              0.46,
+              0.84
+          ],
+          "rgbInteger": [
+              34,
+              117,
+              215
+          ]
+      },
+      {
+          "score": 875,
+          "rgbHex": "#317ad2",
+          "rgbDecimal": 3242706,
+          "rgbFloat": [
+              0.19,
+              0.48,
+              0.82
+          ],
+          "rgbInteger": [
+              49,
+              122,
+              210
+          ]
+      },
+      {
+          "score": 850,
+          "rgbHex": "#3c80cc",
+          "rgbDecimal": 3965132,
+          "rgbFloat": [
+              0.24,
+              0.5,
+              0.8
+          ],
+          "rgbInteger": [
+              60,
+              128,
+              204
+          ]
+      },
+      {
+          "score": 825,
+          "rgbHex": "#4485c7",
+          "rgbDecimal": 4490695,
+          "rgbFloat": [
+              0.27,
+              0.52,
+              0.78
+          ],
+          "rgbInteger": [
+              68,
+              133,
+              199
+          ]
+      },
+      {
+          "score": 805,
+          "rgbHex": "#4a8ac1",
+          "rgbDecimal": 4885185,
+          "rgbFloat": [
+              0.29,
+              0.54,
+              0.76
+          ],
+          "rgbInteger": [
+              74,
+              138,
+              193
+          ]
+      },
+      {
+          "score": 780,
+          "rgbHex": "#5090bb",
+          "rgbDecimal": 5279931,
+          "rgbFloat": [
+              0.31,
+              0.56,
+              0.73
+          ],
+          "rgbInteger": [
+              80,
+              144,
+              187
+          ]
+      },
+      {
+          "score": 755,
+          "rgbHex": "#5495b6",
+          "rgbDecimal": 5543350,
+          "rgbFloat": [
+              0.33,
+              0.58,
+              0.71
+          ],
+          "rgbInteger": [
+              84,
+              149,
+              182
+          ]
+      },
+      {
+          "score": 730,
+          "rgbHex": "#579ab0",
+          "rgbDecimal": 5741232,
+          "rgbFloat": [
+              0.34,
+              0.6,
+              0.69
+          ],
+          "rgbInteger": [
+              87,
+              154,
+              176
+          ]
+      },
+      {
+          "score": 705,
+          "rgbHex": "#5aa0aa",
+          "rgbDecimal": 5939370,
+          "rgbFloat": [
+              0.35,
+              0.63,
+              0.67
+          ],
+          "rgbInteger": [
+              90,
+              160,
+              170
+          ]
+      },
+      {
+          "score": 685,
+          "rgbHex": "#5ca5a4",
+          "rgbDecimal": 6071716,
+          "rgbFloat": [
+              0.36,
+              0.65,
+              0.64
+          ],
+          "rgbInteger": [
+              92,
+              165,
+              164
+          ]
+      },
+      {
+          "score": 660,
+          "rgbHex": "#5eab9e",
+          "rgbDecimal": 6204318,
+          "rgbFloat": [
+              0.37,
+              0.67,
+              0.62
+          ],
+          "rgbInteger": [
+              94,
+              171,
+              158
+          ]
+      },
+      {
+          "score": 635,
+          "rgbHex": "#5fb098",
+          "rgbDecimal": 6271128,
+          "rgbFloat": [
+              0.37,
+              0.69,
+              0.6
+          ],
+          "rgbInteger": [
+              95,
+              176,
+              152
+          ]
+      },
+      {
+          "score": 610,
+          "rgbHex": "#5fb692",
+          "rgbDecimal": 6272658,
+          "rgbFloat": [
+              0.37,
+              0.71,
+              0.57
+          ],
+          "rgbInteger": [
+              95,
+              182,
+              146
+          ]
+      },
+      {
+          "score": 585,
+          "rgbHex": "#5fbb8c",
+          "rgbDecimal": 6273932,
+          "rgbFloat": [
+              0.37,
+              0.73,
+              0.55
+          ],
+          "rgbInteger": [
+              95,
+              187,
+              140
+          ]
+      },
+      {
+          "score": 565,
+          "rgbHex": "#5fc185",
+          "rgbDecimal": 6275461,
+          "rgbFloat": [
+              0.37,
+              0.76,
+              0.52
+          ],
+          "rgbInteger": [
+              95,
+              193,
+              133
+          ]
+      },
+      {
+          "score": 540,
+          "rgbHex": "#5ec67e",
+          "rgbDecimal": 6211198,
+          "rgbFloat": [
+              0.37,
+              0.78,
+              0.49
+          ],
+          "rgbInteger": [
+              94,
+              198,
+              126
+          ]
+      },
+      {
+          "score": 515,
+          "rgbHex": "#5ccc77",
+          "rgbDecimal": 6081655,
+          "rgbFloat": [
+              0.36,
+              0.8,
+              0.47
+          ],
+          "rgbInteger": [
+              92,
+              204,
+              119
+          ]
+      },
+      {
+          "score": 490,
+          "rgbHex": "#5ad270",
+          "rgbDecimal": 5952112,
+          "rgbFloat": [
+              0.35,
+              0.82,
+              0.44
+          ],
+          "rgbInteger": [
+              90,
+              210,
+              112
+          ]
+      },
+      {
+          "score": 465,
+          "rgbHex": "#57d768",
+          "rgbDecimal": 5756776,
+          "rgbFloat": [
+              0.34,
+              0.84,
+              0.41
+          ],
+          "rgbInteger": [
+              87,
+              215,
+              104
+          ]
+      },
+      {
+          "score": 445,
+          "rgbHex": "#54dd60",
+          "rgbDecimal": 5561696,
+          "rgbFloat": [
+              0.33,
+              0.87,
+              0.38
+          ],
+          "rgbInteger": [
+              84,
+              221,
+              96
+          ]
+      },
+      {
+          "score": 420,
+          "rgbHex": "#4fe357",
+          "rgbDecimal": 5235543,
+          "rgbFloat": [
+              0.31,
+              0.89,
+              0.34
+          ],
+          "rgbInteger": [
+              79,
+              227,
+              87
+          ]
+      },
+      {
+          "score": 395,
+          "rgbHex": "#4ae84e",
+          "rgbDecimal": 4909134,
+          "rgbFloat": [
+              0.29,
+              0.91,
+              0.31
+          ],
+          "rgbInteger": [
+              74,
+              232,
+              78
+          ]
+      },
+      {
+          "score": 370,
+          "rgbHex": "#43ee43",
+          "rgbDecimal": 4451907,
+          "rgbFloat": [
+              0.26,
+              0.93,
+              0.26
+          ],
+          "rgbInteger": [
+              67,
+              238,
+              67
+          ]
+      },
+      {
+          "score": 345,
+          "rgbHex": "#3bf436",
+          "rgbDecimal": 3929142,
+          "rgbFloat": [
+              0.23,
+              0.96,
+              0.21
+          ],
+          "rgbInteger": [
+              59,
+              244,
+              54
+          ]
+      },
+      {
+          "score": 325,
+          "rgbHex": "#2ff925",
+          "rgbDecimal": 3143973,
+          "rgbFloat": [
+              0.18,
+              0.98,
+              0.15
+          ],
+          "rgbInteger": [
+              47,
+              249,
+              37
+          ]
+      },
+      {
+          "score": 300,
+          "rgbHex": "#1eff00",
+          "rgbDecimal": 2031360,
+          "rgbFloat": [
+              0.12,
+              1,
+              0
+          ],
+          "rgbInteger": [
+              30,
+              255,
+              0
+          ]
+      },
+      {
+          "score": 275,
+          "rgbHex": "#80ff64",
+          "rgbDecimal": 8453988,
+          "rgbFloat": [
+              0.5,
+              1,
+              0.39
+          ],
+          "rgbInteger": [
+              128,
+              255,
+              100
+          ]
+      },
+      {
+          "score": 250,
+          "rgbHex": "#b3ff9b",
+          "rgbDecimal": 11796379,
+          "rgbFloat": [
+              0.7,
+              1,
+              0.61
+          ],
+          "rgbInteger": [
+              179,
+              255,
+              155
+          ]
+      },
+      {
+          "score": 225,
+          "rgbHex": "#dbffcd",
+          "rgbDecimal": 14417869,
+          "rgbFloat": [
+              0.86,
+              1,
+              0.8
+          ],
+          "rgbInteger": [
+              219,
+              255,
+              205
+          ]
+      },
+      {
+          "score": 200,
+          "rgbHex": "#ffffff",
+          "rgbDecimal": 16777215,
+          "rgbFloat": [
+              1,
+              1,
+              1
+          ],
+          "rgbInteger": [
+              255,
+              255,
+              255
+          ]
       }
-    ],
+  ],
 
     getScoreColorTier: function(score) {
         const entity = this.rioScoreColors.find(a => a.score < score) || this.rioScoreColors[this.rioScoreColors.length - 1];
