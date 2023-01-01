@@ -100,6 +100,9 @@ module.exports = {
 
     prepareProfileBestRuns: async name => {
         const profile = await module.exports.getProfile(name);
+        if(!profile) {
+            return null;
+        }
         const allBestRuns = profile.allBestRuns.concat(profile.allBestAltRuns);
 
         let fortifiedScore = 0;
@@ -110,6 +113,9 @@ module.exports = {
         }
         for(let dungeon of allBestRuns) {
             const affix = dungeon.affixes[0].name;
+            if(!allRuns[dungeon.short_name]) {
+                allRuns[dungeon.short_name] = {};
+            }
             allRuns[dungeon.short_name][affix] = dungeon;
             if(affix == 'Tyrannical') {
                 tyrannicalScore += dungeon.score;

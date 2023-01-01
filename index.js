@@ -21,14 +21,14 @@ let commonQuotes = [];
 
 
 // For seasonal data reset..
-// const wipeMythicScores = async () => {
+const wipeMythicScores = async () => {
 
-//   const profiles = await database.getAllProfiles();
-//   for(let profile of profiles) {
-//     const { updatedProfile } = await api.wipeSeasonData(profile);
-//     await database.updateProfile(updatedProfile);
-//   }
-// }
+  const profiles = await database.getAllProfiles();
+  for(let profile of profiles) {
+    const { updatedProfile } = await api.wipeSeasonData(profile);
+    await database.updateProfile(updatedProfile);
+  }
+}
 
 const refreshMythicScores = async () => {
   
@@ -41,15 +41,15 @@ const refreshMythicScores = async () => {
       // Save updated to db...
       await database.updateProfile(updatedProfile);
       // Some profile updates can be silent (like covenant changes).
-      if(messageReply) {
-        mythicScoresChannel.send(messageReply);
-        voiceAgent.voiceQuote(messageReply);
-        database.prepareProfileBestRuns(profile.name).then(myProfile => {
-          profileHtmlToImage(myProfile).then(() => {
-            mythicScoresChannel.send({files: ['./profileImage.png']});
-          });
-        });
-      }
+      // if(messageReply) {
+      //   mythicScoresChannel.send(messageReply);
+      //   // voiceAgent.voiceQuote(messageReply);
+      //   database.prepareProfileBestRuns(profile.name).then(myProfile => {
+      //     profileHtmlToImage(myProfile).then(() => {
+      //       mythicScoresChannel.send({files: ['./profileImage.png']});
+      //     });
+      //   });
+      // }
     }
   }
  }
@@ -113,6 +113,19 @@ client.on('ready', () => {
      return voiceAgent.handleMusicCommand(msg.content);
     }
 
+        // Add addition slang to db and update in memory
+    // example: slang omg oh my god
+    if(msg.content.startsWith('slang')) {
+      let data = msg.content.split(' ');
+      let name = data[1];
+      data.shift();
+      data.shift();
+      let value = data.join(' ');
+      return database.addSlang({name, value}).then(() => {
+        updateSlangs();
+      });
+    }
+
     if(msg.channel.name === constants.channelNames.scores || msg.channel.name === constants.channelNames.general || msg.channel.name === constants.channelNames.test) {
       if(msg.content.toLocaleLowerCase().replace(/ /g, '') == 'shameboard') {
         return database.getAllProfiles().then(res => {
@@ -149,9 +162,14 @@ client.on('ready', () => {
   
          if(charName) {
             database.prepareProfileBestRuns(charName).then(myProfile => {
-              profileHtmlToImage(myProfile).then(() => {
-                msg.channel.send({files: ['./profileImage.png']});
-              });
+              if(myProfile) {
+                profileHtmlToImage(myProfile).then(() => {
+                  msg.channel.send({files: ['./profileImage.png']});
+                });
+              } else {
+                msg.channel.send('Profile does not exists');
+              }
+         
             }); 
          }
         return;
@@ -183,7 +201,7 @@ client.on('ready', () => {
 
 
     if(msg.channel.name === 'meow-at-work') {
-      const meowVoice = constants.botVoices[8].value;
+      const meowVoice = constants.botVoices[13].value;
       let message = msg.content;
 
       // Fix content for bot proper pronouncing
@@ -193,9 +211,9 @@ client.on('ready', () => {
       }
       
       // Delete message after 1 min.
-      setTimeout(() => {
-        msg.delete();
-      }, 60 * 1000);
+      // setTimeout(() => {
+      //   msg.delete();
+      // }, 60 * 1000);
       return voiceAgent.voiceQuote(message, meowVoice);
     }
 
@@ -227,19 +245,6 @@ client.on('ready', () => {
 
     if(msg.content.includes('updateSlangs')) {
       return updateSlangs();
-    }
-
-    // Add addition slang to db and update in memory
-    // example: slang omg oh my god
-    if(msg.content.startsWith('slang')) {
-      let data = msg.content.split(' ');
-      let name = data[1];
-      data.shift();
-      data.shift();
-      let value = data.join(' ');
-      return database.addSlang({name, value}).then(() => {
-        updateSlangs();
-      });
     }
     
 

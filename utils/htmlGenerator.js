@@ -140,7 +140,7 @@ ${characters.slice(0,18).map(a=>
 <td><img style="vertical-align: inherit" src='${resources[a.bestRun && a.bestRun.affixes && a.bestRun.affixes[0] && a.bestRun.affixes[0].name]}' width="40" height="40"/><span style="color:${a.bestRun && a.bestRun.num_keystone_upgrades ? "#BDE4A8" : "#F44174"};">${a.bestRun && a.bestRun.short_name || ''} +${a.bestRun && a.bestRun.mythic_level || '0'}</span></td>
 <td><img style="vertical-align: inherit" src='${resources[a.worstRun && a.worstRun.affixes && a.worstRun.affixes[0] && a.worstRun.affixes[0].name]}' width="40" height="40"/><span style="color:${a.worstRun && a.worstRun.num_keystone_upgrades ? "#BDE4A8" : "#F44174"};">${a.worstRun && a.worstRun.short_name || ''} +${a.worstRun && a.worstRun.mythic_level || '0'}</span></td>
 </tr>`
-).reduce((a,b) => a + b )}
+).reduce((a,b) => a + b, 0 )}
 </tbody>
 </table></body></html>`;
 
@@ -230,7 +230,7 @@ const generateOldSeasonHtml = (characters, season) => {
   <td style="color:${constants.classColors[a.class]}">${a.name} <img style="vertical-align: inherit" src='${resources[a.covenant]}' width="40" height="40"/></td>
   <td><img style="vertical-align: inherit" src='${resources[a.role]}' width="40" height="40"/> - ${Math.round(a[`mythicScoresS${season}`].all)}</td>
   </tr>`
-  ).reduce((a,b) => a + b )}
+  ).reduce((a,b) => a + b, 0 )}
   </tbody>
   </table></body></html>`;
   

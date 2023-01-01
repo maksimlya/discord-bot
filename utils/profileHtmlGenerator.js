@@ -25,6 +25,9 @@ const initProfileResources = () => {
   fs.readFile('./resources/Roles/Healer.png', "base64" ,(err, res) => {
     resources["healer"] = 'data:image/png;base64, ' + res;
   });
+  fs.readFile('./resources/Roles/Star.png', "base64" ,(err, res) => {
+    resources["Star"] = 'data:image/png;base64, ' + res;
+  });
   fs.readFile('./resources/Affixes/Fortified.jpg', "base64" ,(err, res) => {
     resources["Fortified"] = 'data:image/png;base64, ' + res;
   });
@@ -129,7 +132,7 @@ table.minimalistBlack {
 <tr>
 <th>Dung/Aff</th>
 ${sortedRuns.map(dung => {
-    return `<th>${dung}</th>`
+    return `<th>${constants.mythicNames[dung]}</th>`
 }).reduce((a,b) => a + b )}
 <th>Total</th>
 </tr>
@@ -142,7 +145,11 @@ ${sortedRuns.map(dung =>
     <td>
     <table style="width: 100%; font-weight: bold;"><tr>
     <td style="border:none">
-    <span style="float: left; color: ${char.allRuns[dung]["Fortified"] && char.allRuns[dung]["Fortified"].num_keystone_upgrades ? `green` : `red`}">+${char.allRuns[dung]["Fortified"] && char.allRuns[dung]["Fortified"].mythic_level || 0}</span>
+    <span style="float: left; color: ${char.allRuns[dung]["Fortified"] && char.allRuns[dung]["Fortified"].num_keystone_upgrades ? `green` : `red`}">+${char.allRuns[dung]["Fortified"] && char.allRuns[dung]["Fortified"].mythic_level || 0}
+    ${Array.from(Array(char.allRuns[dung]["Fortified"]?.num_keystone_upgrades)).map(_ =>
+      `<img style="vertical-align: inherit" src='${resources['Star']}' width="20" height="20"/>`
+    ).reduce((a,b) => a+b, '')}
+    </span>
     </td>
     <td style="border:none">
     ${char.allRuns[dung]["Fortified"] && char.allRuns[dung]["Fortified"].score || 0}
@@ -161,7 +168,11 @@ ${sortedRuns.map(dung =>
     <td>
     <table style="width: 100%; font-weight: bold;"><tr>
     <td style="border:none">
-    <span style="float: left; color: ${char.allRuns[dung]["Tyrannical"] && char.allRuns[dung]["Tyrannical"].num_keystone_upgrades ? `green` : `red`}">+${char.allRuns[dung]["Tyrannical"] && char.allRuns[dung]["Tyrannical"].mythic_level || 0}</span>
+    <span style="float: left; color: ${char.allRuns[dung]["Tyrannical"] && char.allRuns[dung]["Tyrannical"].num_keystone_upgrades ? `green` : `red`}">+${char.allRuns[dung]["Tyrannical"] && char.allRuns[dung]["Tyrannical"].mythic_level || 0}
+    ${Array.from(Array(char.allRuns[dung]["Tyrannical"]?.num_keystone_upgrades)).map(_ =>
+      `<img style="vertical-align: inherit" src='${resources['Star']}' width="20" height="20"/>`
+    ).reduce((a,b) => a+b, '')}
+    </span>
     </td>
     <td style="border:none">
     ${char.allRuns[dung]["Tyrannical"] && char.allRuns[dung]["Tyrannical"].score || 0}
